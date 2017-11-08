@@ -8,7 +8,7 @@
 ?>
 
 <?php get_template_part( 'global-templates/header' ); ?>
-
+<div id="sec1"></div>
 <!-- Block 1 -->
 <div class="container block">
   <div class="row">
@@ -86,6 +86,7 @@ $block2BackgroundImage = get_field('block_2_background');
 <?php
 $leftImage = get_field('block_3_image');
 ?>
+
 <div class="container-fluid nopadding block block_3">
   <div class="row">
     <div class="col-12">

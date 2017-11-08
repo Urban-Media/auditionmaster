@@ -35,7 +35,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 		<!--<nav class="navbar navbar-expand-md navbar-dark">-->
 
-			<div class="container-fluid nopadding fixed_menu">
+			<div id="globalMenu" class="container-fluid nopadding fixed_menu">
 
 				<div class="container">
 

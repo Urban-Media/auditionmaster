@@ -98,7 +98,7 @@ class Social_Links_Navwalker extends Walker_Nav_Menu {
       }
 
       $socialImage = get_template_directory_uri() . "/img/" . $item->title ."_icon.png";
-      $output .= '<li class="social_link"><a href="' . $url . '"><img src="' . $socialImage .'"></span>';
+      $output .= '<li class="social_link"><a href="' . $url . '"><img src="' . $socialImage .'" class="social_button_footer" data-platform="' . $item->title .'" data-original="' . $socialImage .'"></span>';
   }
 
   public function end_el( &$output, $item, $depth = 0, $args = array() ) {
@@ -111,12 +111,24 @@ class Social_Links_Navwalker extends Walker_Nav_Menu {
  */
 function load_custom_scripts() {
     wp_register_script('bxSlider', '//cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js', array('jquery'), false);
-    wp_register_script( 'bxSlider-config', get_template_directory_uri() . '/js/bxSlider-config.js', array('jquery', 'bxSlider'), false);
+    wp_register_script('bxSlider-config', get_template_directory_uri() . '/js/bxSlider-config.js', array('jquery', 'bxSlider'), false);
     wp_register_script('locationAwareHover', get_template_directory_uri() . '/js/button_hover_effect.js', array('jquery'), false);
+    wp_register_script('global', get_template_directory_uri() . '/js/global.js', array('jquery', 'scrollMagic', 'addIndicators'), false);
+    wp_register_script('scrollMagic', '//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.min.js', array('jquery'), false);
+    wp_register_script( 'gsap-animation', '//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/animation.gsap.js', array('jquery', 'scrollMagic', 'tweenMax'), false);
+    wp_register_script( 'tweenMax', '//cdnjs.cloudflare.com/ajax/libs/gsap/1.20.2/TweenMax.min.js', array('jquery'), false);
+    // The script below is for dev purposes only and not needed on live
+    wp_register_script('addIndicators', '//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/debug.addIndicators.min.js', array('jquery', 'scrollMagic'), false);
 
     wp_enqueue_script('bxSlider', '//cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js', array('jquery'), false);
-    wp_enqueue_script( 'bxSlider-config', get_template_directory_uri() . '/js/bxSlider-config.js', array('jquery', 'bxSlider'), false);
+    wp_enqueue_script('bxSlider-config', get_template_directory_uri() . '/js/bxSlider-config.js', array('jquery', 'bxSlider'), false);
     wp_enqueue_script('locationAwareHover', get_template_directory_uri() . '/js/button_hover_effect.js', array('jquery'), false);
+    wp_enqueue_script('global', get_template_directory_uri() . '/js/global.js', array('jquery', 'scrollMagic', 'addIndicators'), false);
+    wp_enqueue_script('scrollMagic', '//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.min.js', array('jquery'), false);
+    wp_enqueue_script( 'gsap-animation', '//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/animation.gsap.js', array('jquery', 'scrollMagic', 'tweenMax'), false);
+    wp_enqueue_script( 'tweenMax', '//cdnjs.cloudflare.com/ajax/libs/gsap/1.20.2/TweenMax.min.js', array('jquery'), false);
+    // The script below is for dev purposes only and not needed on live
+    wp_enqueue_script('addIndicators', '//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/debug.addIndicators.min.js', array('jquery', 'scrollMagic'), false);
 
     $wnm_custom = array( 'template_directory_uri' => get_template_directory_uri() );
     wp_localize_script( 'bxSlider-config', 'local_vars', $wnm_custom );

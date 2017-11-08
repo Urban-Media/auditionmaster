@@ -19,11 +19,13 @@ global $post;
                    <a href="<?php the_sub_field('left_button_link'); ?>">
                      <button class="header_slider_button header_slider_button_colour locationAware locationAwareHoverPurple">
                        <?php the_sub_field('left_button_text'); ?>
+                       <span></span>
                      </button>
                    </a>
                    <a href="<?php the_sub_field('right_button_link'); ?>">
                      <button class="header_slider_button header_slider_button_transparent locationAware locationAwareHover">
                        <?php the_sub_field('right_button_text'); ?>
+                       <span></span>
                      </button>
                    </a>
                  </div>

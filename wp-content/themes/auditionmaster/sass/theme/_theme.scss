@@ -140,6 +140,20 @@ a {
   }
 }
 
+.white_menu {
+  background-color: white !important;
+  -webkit-box-shadow: 0px 7px 5px 0px rgba(189,179,189,1);
+  -moz-box-shadow: 0px 7px 5px 0px rgba(189,179,189,1);
+  box-shadow: 0px 7px 5px 0px rgba(189,179,189,1);
+  a {
+    color: black !important;
+  }
+}
+
+.black_header_text {
+  color: black !important;
+}
+
 .logo {
   max-width:none;
 }
@@ -196,6 +210,9 @@ a {
   display: block;
   width: fit-content;
   margin-top: 50px;
+  & a:hover {
+    text-decoration: none;
+  }
   @include breakpoint(sm) {
     text-align: center;
   }

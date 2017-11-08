@@ -9194,6 +9194,17 @@ a {
   .header_menu li:last-child {
     padding-right: 5px; }
 
+.white_menu {
+  background-color: white !important;
+  -webkit-box-shadow: 0px 7px 5px 0px #bdb3bd;
+  -moz-box-shadow: 0px 7px 5px 0px #bdb3bd;
+  box-shadow: 0px 7px 5px 0px #bdb3bd; }
+  .white_menu a {
+    color: black !important; }
+
+.black_header_text {
+  color: black !important; }
+
 .logo {
   max-width: none; }
 
@@ -9241,6 +9252,8 @@ a {
   display: block;
   width: fit-content;
   margin-top: 50px; }
+  .header_slider_buttons a:hover {
+    text-decoration: none; }
   @media (min-width: 768px) and (max-width: 991px) {
     .header_slider_buttons {
       text-align: center; } }
