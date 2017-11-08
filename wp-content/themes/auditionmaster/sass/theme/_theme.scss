@@ -1,0 +1,731 @@
+// This is an empty scss file for your custom styles - Please add your super duper awesome mega design styles here
+
+/*
+ * Functions/Mixins
+ */
+
+/*
+ * Breakpoints for responsive design
+ */
+ @mixin breakpoint($point){
+
+  @if ($point == lg){
+    @media (min-width: 1200px){ @content }
+  }
+  @else if ($point == md){
+    @media (min-width: 992px) and (max-width: 1199px){ @content }
+  }
+
+  @else if ($point == sm){
+    @media (min-width: 768px) and (max-width: 991px){ @content }
+  }
+
+  @else if ($point == xs){
+    @media (max-width: 767px) and (min-width: 641px){ @content }
+  }
+
+  @else if ($point == xxs){
+    @media (max-width: 640px) and (min-width: 481px){ @content }
+  }
+
+  @else if ($point == xxxs){
+    @media  (max-width: 480px){ @content }
+  }
+}
+
+// Mix white with another color
+// ----------------------------
+@function tint($color, $percent: $mix-percent-default){
+	@return mix(white, $color, $percent);
+}
+
+// Mix black with another color
+// ----------------------------
+@function shade($color, $percent: $mix-percent-default){
+	@return mix(black, $color, $percent);
+}
+
+// Create a random color
+// ---------------------
+@function random-color($min: 0, $max: 255, $alpha: 1) {
+	@if $min < 0 {
+		$min: -1;
+	} @else {
+		$min: $min - 1;
+	}
+	@if $max > 255 {
+		$max: 256;
+	} @else {
+		$max: $max + 1;
+	}
+	$red: random($max) + $min;
+	$green: random($max) + $min;
+	$blue: random($max) + $min;
+	@return rgba($red, $green, $blue, $alpha);
+}
+
+@mixin size($width, $height: $width) {
+	width: $width;
+	height: $height;
+}
+
+/*
+ * End functions/mixins
+ */
+
+
+/* Fonts */
+.nimbus_sans {
+  font-family: "Nimbus Sans", sans-serif;
+}
+
+.nimbus_sans_bold {
+  font-family: "Nimbus Sans Bold", sans-serif;
+  font-weight: bold;
+}
+
+.source_sans_pro {
+  font-family: "Source Sans Pro", sans-serif;
+}
+
+.body_text {
+  font-size: 16px;
+}
+
+.premium {
+  color: $premium;
+  font-style: normal;
+  a {
+    color: $premium;
+    text-decoration: underline;
+  }
+}
+
+/* End fonts */
+
+a {
+  background-color: none !important;
+}
+
+.navbar {
+  height: 80px;
+}
+
+.navbar-brand {
+  margin-top: -8px;
+}
+
+.fixed_menu {
+  position: fixed;
+  z-index: 100;
+  width: 100%;
+  /*opacity: 0.5;*/
+  background-color:rgba(52,58,64,0.75);
+  height: 80px;
+  display: list-item;
+}
+
+.header_menu {
+  color: white;
+  li {
+    display: inline-block;
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+  a {
+    color: white;
+  }
+  & li:last-child {
+    padding-right: 5px;
+  }
+}
+
+.logo {
+  max-width:none;
+}
+
+.header_slider_background {
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.header_slide {
+  min-height: 660px;
+}
+
+.bx-wrapper {
+  border: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+.bx-prev {
+  background: none !important;
+}
+
+.bx-next {
+  background: none !important;
+}
+
+#arrow_left {
+  margin-left: 9vw;
+}
+
+#arrow_right {
+  margin-left: -9vw;
+}
+
+.header_slider_title {
+  font-size: 60px;
+  @include breakpoint(sm) {
+    font-size: 50px;
+  }
+  @include breakpoint(xs) {
+    font-size: 50px;
+  }
+  @include breakpoint(xxs) {
+    font-size: 40px;
+  }
+  @include breakpoint(xxxs) {
+    font-size: 30px;
+  }
+}
+
+.header_slider_buttons {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  width: fit-content;
+  margin-top: 50px;
+  @include breakpoint(sm) {
+    text-align: center;
+  }
+  @include breakpoint(xs) {
+    text-align: center;
+  }
+  @include breakpoint(xxs) {
+    text-align: center;
+  }
+  @include breakpoint(xxxs) {
+    text-align: center;
+  }
+}
+
+.header_slider_button {
+  border-radius: 20px;
+  color: white;
+  border: 0;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  padding-left: 40px;
+  padding-right: 40px;
+  margin-left: 15px;
+  margin-right: 15px;
+  @include breakpoint(sm) {
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+  @include breakpoint(xs) {
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+  @include breakpoint(xxs) {
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+  @include breakpoint(xxxs) {
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+}
+
+.header_slider_button_colour {
+  background-color: $pink;
+}
+
+.header_slider_button_transparent {
+  background-color: transparent;
+  border: 2px solid white;
+}
+
+.header_slider_slide {
+  flex: 1;
+  position: absolute;
+  top: 40%;
+}
+
+.frontpage_title {
+  /*font-family : "";*/
+  font-size: 36px;
+}
+
+.white_text {
+  color: white;
+}
+
+.block {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.block_1_title {
+  font-size: 30px;
+}
+
+.feature {
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+
+.features_list {
+  padding: 0px;
+  margin-top: 40px;
+}
+
+.feature_list_title {
+  font-size: 18px;
+  line-height: .1;
+  @include breakpoint(sm) {
+    line-height: 1;
+  }
+  @include breakpoint(xs) {
+    line-height: 1;
+  }
+  @include breakpoint(xxs) {
+    line-height: 1;
+  }
+  @include breakpoint(xxxs) {
+    line-height: 1;
+  }
+}
+
+.feature_list_content {
+  line-height: 1;
+  a {
+    color: $pink;
+    text-decoration: underline;
+  }
+}
+
+.feature_list_icon {
+  list-style-type: none;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding-left: 50px;
+  padding-top: 10px;
+  vertical-align: middle;
+  background-repeat: no-repeat;
+  background-position: left top;
+}
+
+.feature_list_footer {
+  font-style: italic;
+}
+
+.block_2 {
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding-top: 50px;
+}
+
+.block_2_content {
+  padding-top: 40px;
+  padding-bottom: 50px;
+}
+
+.block_2_video {
+  margin-bottom: 50px;
+}
+
+video {
+  width: 70%    !important;
+  height: auto   !important;
+  @include breakpoint(sm) {
+    width: 100% !important;
+  }
+  @include breakpoint(xs) {
+    width: 100% !important;
+  }
+  @include breakpoint(xxs) {
+    width: 100% !important;
+  }
+  @include breakpoint(xxxs) {
+    width: 100% !important;
+  }
+}
+
+.block_3 {
+  background-color: $subtle-grey;
+}
+
+.block_3_title {
+  padding-bottom: 50px;
+  @include breakpoint(sm) {
+    text-align: center;
+    padding-bottom: 10px;
+    padding-top: 20px;
+  }
+  @include breakpoint(xs) {
+    text-align: center;
+    padding-bottom: 10px;
+    padding-top: 20px;
+  }
+  @include breakpoint(xxs) {
+    text-align: center;
+    padding-bottom: 10px;
+    padding-top: 20px;
+  }
+  @include breakpoint(xxxs) {
+    text-align: center;
+    padding-bottom: 10px;
+    padding-top: 20px;
+  }
+}
+
+.block_slider_buttons {
+  display: block;
+  width: fit-content;
+  margin-top: 50px;
+  & a:hover {
+    text-decoration: none;
+  }
+  @include breakpoint(sm) {
+    text-align: center;
+  }
+  @include breakpoint(xs) {
+    text-align: center;
+  }
+  @include breakpoint(xxs) {
+    text-align: center;
+  }
+  @include breakpoint(xxxs) {
+    text-align: center;
+  }
+}
+
+.block_slider_button {
+  border-radius: 20px;
+  color: white;
+  border: 0;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  padding-left: 30px;
+  padding-right: 30px;
+  margin-right: 15px;
+  transition: all 0.5s ease 0s;
+  @include breakpoint(md) {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  @include breakpoint(sm) {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  @include breakpoint(xs) {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  @include breakpoint(xxs) {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  @include breakpoint(xxxs) {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.block_slider_button_hover {
+  &:hover {
+    /*background: $purple;*/
+  }
+}
+
+.block_slider_button_transparent {
+  background-color: transparent;
+  border: 2px solid $pink;
+  color: $pink !important;
+  padding-top: 6px !important;
+  padding-bottom: 6px !important;
+}
+
+.block_4_points {
+  color: $grey-list;
+  font-size: 14px;
+  text-transform: uppercase;
+  padding-top: 20px;
+  padding-left: 0;
+  padding-right: 0;
+  & li {
+    display: inline-block;
+  }
+  & li::before {
+    content: '\00a0\2022\00a0\00a0';
+  }
+  & li:first-child::before {
+    content: '';
+  }
+  @include breakpoint(sm) {
+    text-align: center;
+  }
+  @include breakpoint(xs) {
+    text-align: center;
+  }
+  @include breakpoint(xxs) {
+    text-align: center;
+  }
+  @include breakpoint(xxxs) {
+    text-align: center;
+  }
+}
+
+.block_4_button_container {
+  margin-top: 30px;
+  @include breakpoint(sm) {
+    text-align: center;
+  }
+  @include breakpoint(xs) {
+    text-align: center;
+  }
+  @include breakpoint(xxs) {
+    text-align: center;
+  }
+  @include breakpoint(xxxs) {
+    text-align: center;
+  }
+}
+
+.binoculars {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  position: relative;
+  @include breakpoint(sm) {
+    padding-top: 20px;
+  }
+  @include breakpoint(xs) {
+    padding-top: 20px;
+  }
+  @include breakpoint(xxs) {
+    padding-top: 20px;
+  }
+  @include breakpoint(xxxs) {
+    padding-top: 20px;
+  }
+}
+
+.footer {
+  background-color: $footer;
+  padding-top: 50px;
+}
+
+.footer_title {
+  color: white;
+  font-weight: bold;
+  @include breakpoint(sm) {
+    text-align: center;
+  }
+  @include breakpoint(xs) {
+    text-align: center;
+  }
+  @include breakpoint(xxs) {
+    text-align: center;
+  }
+  @include breakpoint(xxxs) {
+    text-align: center;
+  }
+}
+
+.footer_menu {
+  color: white;
+  a {
+    color: white;
+  }
+  &:hover {
+      color: white;
+  }
+  &:focus {
+    color: white;
+  }
+  @include breakpoint(sm) {
+    text-align: center;
+  }
+  @include breakpoint(xs) {
+    text-align: center;
+  }
+  @include breakpoint(xxs) {
+    text-align: center;
+  }
+  @include breakpoint(xxxs) {
+    text-align: center;
+  }
+}
+
+.social_links {
+  padding: 0;
+  text-align: right;
+  @include breakpoint(sm) {
+    padding-top: 15px;
+    text-align: center;
+  }
+  @include breakpoint(xs) {
+    padding-top: 15px;
+    text-align: center;
+  }
+  @include breakpoint(xxs) {
+    padding-top: 15px;
+    text-align: center;
+  }
+  @include breakpoint(xxxs) {
+    padding-top: 15px;
+    text-align: center;
+  }
+}
+
+.social_link {
+  display:inline-block;
+  padding-left:4px;
+  padding-right:4px;
+}
+
+.footer_bottom {
+  padding-top: 50px;
+}
+
+.footer_bottom_text {
+  color: $grey-list;
+  font-size: 16px;
+  text-align: right;
+  @include breakpoint(sm) {
+    text-align: center;
+  }
+  @include breakpoint(xs) {
+    text-align: center;
+  }
+  @include breakpoint(xxs) {
+    text-align: center;
+  }
+  @include breakpoint(xxxs) {
+    text-align: center;
+  }
+}
+
+#legal-links-menu {
+  padding: 0;
+  li {
+    color: $grey-list;
+    display: inline-block;
+    padding-right: 20px;
+    @include breakpoint(sm) {
+      padding-right: 0px;
+    }
+    @include breakpoint(xs) {
+      padding-right: 0px;
+    }
+    @include breakpoint(xxs) {
+      padding-right: 0px;
+    }
+    @include breakpoint(xxxs) {
+      padding-right: 0px;
+    }
+  }
+  a {
+    color: $grey-list;
+  }
+}
+
+/*
+ * Special button hover effect
+ */
+ span {
+    transition: none;
+  }
+
+.locationAware {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid $pink;
+  z-index: 1;
+}
+
+.locationAwareHover {
+   $btn-color: $pink;
+   $btn-color-dark: shade($btn-color, 0%);
+   $btn-width: 250px !default;
+  	 color: white; /*tint($btn-color, 100);*/
+
+   span {
+     position: absolute;
+     display: block;
+     @include size(0);
+     border-radius: 50%;
+     background-color: $btn-color-dark;
+     transition: width 0.4s ease-in-out, height 0.4s ease-in-out;
+     transform: translate(-50%, -50%);
+     z-index: -1;
+   }
+
+   &:hover {
+     color: white !important; /*tint($btn-color, 75%);*/
+
+     span {
+       @include size(225%, $btn-width*2.25);
+     }
+   }
+
+   &:active {
+     background-color: $btn-color;
+   }
+}
+
+.locationAwareHoverPurple {
+   $btn-color: $purple;
+   $btn-color-dark: shade($btn-color, 0%);
+   $btn-width: 250px !default;
+  	 color: white; /*tint($btn-color, 100);*/
+
+   span {
+     position: absolute;
+     display: block;
+     @include size(0);
+     border-radius: 50%;
+     background-color: $btn-color-dark;
+     transition: width 0.4s ease-in-out, height 0.4s ease-in-out;
+     transform: translate(-50%, -50%);
+     z-index: -1;
+   }
+
+   &:hover {
+     color: white !important; /*tint($btn-color, 75%);*/
+
+     span {
+       @include size(225%, $btn-width*2.25);
+     }
+   }
+
+   &:active {
+     background-color: $btn-color;
+   }
+}
+
+html {
+   *,
+  *:before,
+  *:after {
+    box-sizing: border-box;
+    transition: 0.5s ease-in-out;
+  }
+
+  i,em,
+  b,strong,
+  span {
+    transition: none;
+  }
+}
+
+*:before,
+*:after {
+z-index: -1;
+}
