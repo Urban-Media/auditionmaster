@@ -34,8 +34,8 @@ jQuery(document).ready(function($) {
   * Run this code when the #toggle-menu link has been tapped
   * or clicked
   */
- $( '#toggle-menu' ).on( 'touchstart click', function(e) {
-    e.preventDefault();
+ $( '#spinner-form2' ).on( 'touchstart click', function(e) {
+    e.stopPropagation();
 
     var $body = $( 'body' ),
         $page = $( '#page' ),
