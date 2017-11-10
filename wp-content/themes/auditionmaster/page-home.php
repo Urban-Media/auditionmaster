@@ -8,7 +8,7 @@
 ?>
 
 <?php get_template_part( 'global-templates/header' ); ?>
-<div id="sec1"></div>
+<div id="whiteMenuTrigger"></div>
 <!-- Block 1 -->
 <div class="container block">
   <div class="row">
@@ -152,8 +152,9 @@ $rightImage = get_field('block_4_image');
 
       <div class="block_4_button_container">
         <a href="<?php the_field('block_4_button_link'); ?>">
-          <button class="block_slider_button header_slider_button_colour" style="margin-left: 0px;">
+          <button class="block_slider_button header_slider_button_colour locationAware locationAwareHoverPurple" style="margin-left: 0px;">
             <?php the_field('block_4_button_text'); ?>
+            <span></span>
           </button>
         </a>
       </div>

@@ -81,6 +81,15 @@ $container = get_theme_mod( 'understrap_container_type' );
 									//'walker'          => new WP_Bootstrap_Navwalker(),
 								)
 							); ?>
+
+							<div class="spinner-master2">
+							  <input type="checkbox" id="spinner-form2" />
+							  <label for="spinner-form2" class="spinner-spin2">
+							    <div class="spinner2 diagonal part-1"></div>
+							    <div class="spinner2 horizontal"></div>
+							    <div class="spinner2 diagonal part-2"></div>
+							  </label>
+							</div>
 						<!--</nav>-->
 						<!-- End Wordpress Menu -->
 

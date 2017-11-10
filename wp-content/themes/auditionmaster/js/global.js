@@ -21,9 +21,8 @@ jQuery(document).ready(function($) {
 	var controller = new ScrollMagic.Controller();
 
 	// build scenes
-	new ScrollMagic.Scene({triggerElement: "#sec1"})
+	new ScrollMagic.Scene({triggerElement: "#whiteMenuTrigger"})
 					.setClassToggle("#globalMenu", "white_menu") // add class toggle
-          //.setClassToggle("#header-menu", "black_header_text")
 					.addIndicators() // add indicators (requires plugin)
 					.addTo(controller);
 });
