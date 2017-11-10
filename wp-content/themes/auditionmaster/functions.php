@@ -106,6 +106,21 @@ class Social_Links_Navwalker extends Walker_Nav_Menu {
   }
 }
 
+class Mobile_Menu_Navwalker extends Walker_Nav_Menu {
+  public function start_el( &$output, $item, $depth = 0, $args = array(), $id = 0 ) {
+      $url = '';
+      if( !empty( $item->url ) ) {
+          $url = $item->url;
+      }
+
+      $output .= '<li><a href="' . $url . '">' . $item->title;
+  }
+
+  public function end_el( &$output, $item, $depth = 0, $args = array() ) {
+      $output .= '</a></li>';
+  }
+}
+
 /*
  * Load page dependent scripts
  */
@@ -119,6 +134,8 @@ function load_custom_scripts() {
     wp_register_script( 'tweenMax', '//cdnjs.cloudflare.com/ajax/libs/gsap/1.20.2/TweenMax.min.js', array('jquery'), false);
     // The script below is for dev purposes only and not needed on live
     wp_register_script('addIndicators', '//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/debug.addIndicators.min.js', array('jquery', 'scrollMagic'), false);
+    //wp_register_script('snapJs', get_template_directory_uri() . '/js/snap.min.js', array(), false);
+    //wp_register_script('snapJs-config', get_template_directory_uri() . '/js/snap-config.js', array('snapJs'), false);
 
     wp_enqueue_script('bxSlider', '//cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js', array('jquery'), false);
     wp_enqueue_script('bxSlider-config', get_template_directory_uri() . '/js/bxSlider-config.js', array('jquery', 'bxSlider'), false);
@@ -129,12 +146,17 @@ function load_custom_scripts() {
     wp_enqueue_script( 'tweenMax', '//cdnjs.cloudflare.com/ajax/libs/gsap/1.20.2/TweenMax.min.js', array('jquery'), false);
     // The script below is for dev purposes only and not needed on live
     wp_enqueue_script('addIndicators', '//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/debug.addIndicators.min.js', array('jquery', 'scrollMagic'), false);
+    //wp_enqueue_script('snapJs', get_template_directory_uri() . '/js/snap.min.js', array('jquery'), false);
+    //wp_enqueue_script('snapJs-config', get_template_directory_uri() . '/js/snap-config.js', array('snapJs'), false);
 
     $wnm_custom = array( 'template_directory_uri' => get_template_directory_uri() );
     wp_localize_script( 'bxSlider-config', 'local_vars', $wnm_custom );
 
     wp_register_style('bxSlider-css', '//cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css');
+    //wp_register_style('snapJs-css', get_template_directory_uri() . '/css/snap.css');
+
     wp_enqueue_style('bxSlider-css', '//cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css');
+    //wp_enqueue_style('snapJs-css', get_template_directory_uri() . '/css/snap.css');
 
 }
 

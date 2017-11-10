@@ -105,24 +105,181 @@
 
 /* Hamburger icon spinner */
 
-.spinner-master2 * {transition:all 0.3s;-webkit-transition:all 0.3s;box-sizing:border-box;}
+.spinner-master2 * {
+  transition:all 0.3s;
+  -webkit-transition:all 0.3s;
+  box-sizing:border-box;
+}
 
-.spinner-master2 {position:relative;margin:50px auto;height:50px;width:50px;}
+.spinner-master2 {
+  position:relative;
+  margin-top: -20px;
+  height:50px;
+  width:50px;
+  display: none;
+  @include breakpoint(sm) {
+    display: block;
+  }
+  @include breakpoint(xs) {
+    display: block;
+  }
+  @include breakpoint(xxs) {
+    display: block;
+  }
+  @include breakpoint(xxxs) {
+    display: block;
+  }
+}
 
-.spinner-master2 input[type=checkbox] {display:none;}
-.spinner-master2 label {cursor:pointer;position:absolute;z-index:99;height:100%;width:100%;top:10px;left:0;}
+.spinner-master2 input[type=checkbox] {
+  display:none;
+}
+.spinner-master2 label {
+  cursor:pointer;
+  position:absolute;
+  z-index:99;
+  height:100%;
+  width:100%;
+  top:10px;
+  left:0;
+}
 
-.spinner-master2 .spinner2 {position:absolute;height:5px;width:100%;background-color:#000;}
+.spinner-master2 .spinner2 {
+  position:absolute;
+  height:5px;
+  width:100%;
+  background-color:#000;
+}
 
-.spinner-master2 .diagonal.part-1 {position:relative;float:left;}
-.spinner-master2 .horizontal {position:relative;float:left;margin-top:7px;}
-.spinner-master2 .diagonal.part-2 {position:relative;float:left;margin-top:6px;}
+.spinner-master2 .diagonal.part-1 {
+  position:relative;
+  float:left;
+}
 
-.spinner-master2 input[type=checkbox]:checked ~ .spinner-spin2 > .horizontal {opacity: 0;}
-.spinner-master2 input[type=checkbox]:checked ~ .spinner-spin2 > .diagonal.part-1 {transform:rotate(135deg);-webkit-transform:rotate(135deg);margin-top:10px;}
-.spinner-master2 input[type=checkbox]:checked ~ .spinner-spin2 > .diagonal.part-2 {transform:rotate(-135deg);-webkit-transform:rotate(-135deg);margin-top:-16px;}
+.spinner-master2 .horizontal {
+  position:relative;
+  float:left;
+  margin-top:7px;
+}
+
+.spinner-master2 .diagonal.part-2 {
+  position:relative;
+  float:left;
+  margin-top:6px;
+}
+
+.spinner-master2 input[type=checkbox]:checked ~ .spinner-spin2 > .horizontal {
+  opacity: 0;
+}
+
+.spinner-master2 input[type=checkbox]:checked ~ .spinner-spin2 > .diagonal.part-1 {
+  transform:rotate(135deg);
+  -webkit-transform:rotate(135deg);
+  margin-top:10px;
+}
+
+.spinner-master2 input[type=checkbox]:checked ~ .spinner-spin2 > .diagonal.part-2 {
+  transform:rotate(-135deg);
+  -webkit-transform:rotate(-135deg);
+  margin-top:-16px;
+}
 
 /* End hamburger icon spinner */
+
+/*
+ * Mobile menu
+ */
+#page {
+ 	position: relative; /* Set the position property so z-index will apply */
+ 	z-index: 20; /* Make sure this is higher than #menu */
+ 	/*padding: 20px;*/
+ 	height: 100%;
+}
+
+#toggle-menu {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	padding: 15px 10px;
+}
+
+#menu {
+	display: none;
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 190px;
+	padding: 15px 25px;
+  height:100%;
+	margin: 0;
+	list-style: none;
+	background: #333;
+	z-index: 10; /* Make sure the z-index is lower than the #page */
+  will-change: transform;
+}
+
+#menu a {
+	display: block;
+	color: #fff;
+	padding: 15px 0;
+	border-bottom: 1px solid rgba( 255, 255, 255, 0.05 );
+}
+
+/* Animations */
+
+#page, #menu {
+	-webkit-backface-visibility: hidden;
+	//-webkit-perspective: 1000;
+}
+
+
+/* Hide the menu unless it's animating or visible */
+.animating #menu, .menu-visible #menu {
+	display: block;
+}
+
+/***
+* If the animating class is present then apply
+* the CSS transition to #page over 250ms.
+*/
+.animating #page {
+	transition: transform .25s ease-out;
+	-webkit-transition: -webkit-transform .25s ease-out;
+}
+
+/***
+* If the left class is present then transform
+* the #page element 240px to the left.
+*/
+.animating.left #page {
+	transform: translate3d( -190px, 0, 0 );
+	-webkit-transform: translate3d( -190px, 0, 0 );
+}
+
+/***
+* If the right class is present then transform
+* the #page element 240px to the right.
+*/
+.animating.right #page {
+	transform: translate3d( 190px, 0, 0 );
+	-webkit-transform: translate3d( 190px, 0, 0 );
+}
+
+/***
+* If the menu-visible class is present then
+* shift the #page 240px from the right edge
+* via position: absolute to keep it in the
+* open position. When .animating, .left and
+* .right classes are not present the CSS
+* transform does not apply to #page.
+*/
+.menu-visible #page {
+	right: 190px;
+}
+
+/*
+ * End mobile menu
+ */
 
 a {
   background-color: none !important;
@@ -158,6 +315,18 @@ a {
   }
   & li:last-child {
     padding-right: 5px;
+  }
+  @include breakpoint(sm) {
+    display: none;
+  }
+  @include breakpoint(xs) {
+    display: none;
+  }
+  @include breakpoint(xxs) {
+    display: none;
+  }
+  @include breakpoint(xxxs) {
+    display: none;
   }
 }
 
@@ -199,6 +368,10 @@ a {
 
 .bx-next {
   background: none !important;
+}
+
+.bx-wrapper .bx-controls-direction a {
+  z-index: 5 !important;
 }
 
 #arrow_left {
@@ -753,7 +926,7 @@ html {
   *:before,
   *:after {
     box-sizing: border-box;
-    transition: 0.5s ease-in-out;
+    //transition: 0.5s ease-in-out;
   }
 
   i,em,

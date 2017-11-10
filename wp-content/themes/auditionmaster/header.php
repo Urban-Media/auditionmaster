@@ -11,6 +11,20 @@ $container = get_theme_mod( 'understrap_container_type' );
 ?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
+<!-- Mobile menu -->
+<?php wp_nav_menu(
+	array(
+		'theme_location'  => 'header-menu',
+		//'container_class' => 'collapse navbar-collapse',
+		'container_id'    => '',
+		'container' 			=> false,
+		'menu_class'      => 'source_sans',
+		'fallback_cb'     => '',
+		'menu_id'         => 'menu',
+		'walker'          => new Mobile_Menu_Navwalker(),
+	)
+); ?>
+<!-- End mobile menu -->
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -82,7 +96,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 								)
 							); ?>
 
-							<div class="spinner-master2">
+							<div class="spinner-master2" id="toggle-menu">
 							  <input type="checkbox" id="spinner-form2" />
 							  <label for="spinner-form2" class="spinner-spin2">
 							    <div class="spinner2 diagonal part-1"></div>

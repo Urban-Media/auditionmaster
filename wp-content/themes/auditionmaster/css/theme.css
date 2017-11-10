@@ -9173,9 +9173,22 @@ a.skip-link {
 
 .spinner-master2 {
   position: relative;
-  margin: 50px auto;
+  margin-top: -20px;
   height: 50px;
-  width: 50px; }
+  width: 50px;
+  display: none; }
+  @media (min-width: 768px) and (max-width: 991px) {
+    .spinner-master2 {
+      display: block; } }
+  @media (max-width: 767px) and (min-width: 641px) {
+    .spinner-master2 {
+      display: block; } }
+  @media (max-width: 640px) and (min-width: 481px) {
+    .spinner-master2 {
+      display: block; } }
+  @media (max-width: 480px) {
+    .spinner-master2 {
+      display: block; } }
 
 .spinner-master2 input[type=checkbox] {
   display: none; }
@@ -9223,6 +9236,90 @@ a.skip-link {
   margin-top: -16px; }
 
 /* End hamburger icon spinner */
+/*
+ * Mobile menu
+ */
+#page {
+  position: relative;
+  /* Set the position property so z-index will apply */
+  z-index: 20;
+  /* Make sure this is higher than #menu */
+  /*padding: 20px;*/
+  height: 100%; }
+
+#toggle-menu {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 15px 10px; }
+
+#menu {
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 190px;
+  padding: 15px 25px;
+  height: 100%;
+  margin: 0;
+  list-style: none;
+  background: #333;
+  z-index: 10;
+  /* Make sure the z-index is lower than the #page */
+  will-change: transform; }
+
+#menu a {
+  display: block;
+  color: #fff;
+  padding: 15px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05); }
+
+/* Animations */
+#page, #menu {
+  -webkit-backface-visibility: hidden; }
+
+/* Hide the menu unless it's animating or visible */
+.animating #menu, .menu-visible #menu {
+  display: block; }
+
+/***
+* If the animating class is present then apply
+* the CSS transition to #page over 250ms.
+*/
+.animating #page {
+  transition: transform .25s ease-out;
+  -webkit-transition: -webkit-transform .25s ease-out; }
+
+/***
+* If the left class is present then transform
+* the #page element 240px to the left.
+*/
+.animating.left #page {
+  transform: translate3d(-190px, 0, 0);
+  -webkit-transform: translate3d(-190px, 0, 0); }
+
+/***
+* If the right class is present then transform
+* the #page element 240px to the right.
+*/
+.animating.right #page {
+  transform: translate3d(190px, 0, 0);
+  -webkit-transform: translate3d(190px, 0, 0); }
+
+/***
+* If the menu-visible class is present then
+* shift the #page 240px from the right edge
+* via position: absolute to keep it in the
+* open position. When .animating, .left and
+* .right classes are not present the CSS
+* transform does not apply to #page.
+*/
+.menu-visible #page {
+  right: 190px; }
+
+/*
+ * End mobile menu
+ */
 a {
   background-color: none !important; }
 
@@ -9251,6 +9348,18 @@ a {
     color: white; }
   .header_menu li:last-child {
     padding-right: 5px; }
+  @media (min-width: 768px) and (max-width: 991px) {
+    .header_menu {
+      display: none; } }
+  @media (max-width: 767px) and (min-width: 641px) {
+    .header_menu {
+      display: none; } }
+  @media (max-width: 640px) and (min-width: 481px) {
+    .header_menu {
+      display: none; } }
+  @media (max-width: 480px) {
+    .header_menu {
+      display: none; } }
 
 .white_menu {
   background-color: white !important;
@@ -9282,6 +9391,9 @@ a {
 
 .bx-next {
   background: none !important; }
+
+.bx-wrapper .bx-controls-direction a {
+  z-index: 5 !important; }
 
 #arrow_left {
   margin-left: 9vw; }
@@ -9762,8 +9874,7 @@ span {
 html *,
 html *:before,
 html *:after {
-  box-sizing: border-box;
-  transition: 0.5s ease-in-out; }
+  box-sizing: border-box; }
 
 html i, html em,
 html b, html strong,
