@@ -9708,6 +9708,74 @@ video {
     .binoculars {
       padding-top: 20px; } }
 
+/*
+ * Woocommerce stuff
+ */
+.am_product_cat_listing {
+  border: 1px solid #dddddd;
+  padding: 11px !important;
+  margin-right: 25px; }
+  .am_product_cat_listing img {
+    height: unset !important;
+    max-width: none;
+    width: unset !important; }
+
+.am_shop_product_title {
+  color: black;
+  font-size: 16px; }
+  .am_shop_product_title a {
+    color: black; }
+    .am_shop_product_title a:hover {
+      color: black; }
+
+.price {
+  color: #bb486c !important;
+  font-size: 16px !important;
+  font-family: "Nimbus Sans", sans-serif; }
+
+.woocommerce-page ul.products li.product {
+  width: unset !important; }
+
+/*
+ * End Woocommerce stuff
+ */
+/*
+ * bbPress forum modifications
+ */
+.bbp-template-notice {
+  display: none; }
+
+.bbpress-forums {
+  font-family: 'Source Sans Pro', sans-serif; }
+
+#bbpress-forums li.bbp-header {
+  background-color: #808285 !important;
+  color: white;
+  font-weight: normal; }
+
+li.bbp-forum-freshness, li.bbp-topic-freshness {
+  width: 35% !important; }
+
+.bbp-topics a {
+  color: black; }
+
+.bbp-topics:hover {
+  color: black; }
+
+.bbp-topic-meta {
+  font-weight: normal; }
+
+.bbp-topics ul.sticky {
+  background-color: #f8ecf0 !important; }
+  .bbp-topics ul.sticky .bbp-topic-title {
+    font-weight: bold; }
+
+/*
+ * End bbPress forum modifications
+ */
+/*
+ * Footer stuff
+ */
 .footer {
   background-color: #222326;
   padding-top: 50px; }

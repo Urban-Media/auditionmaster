@@ -166,3 +166,17 @@ add_action('wp_enqueue_scripts', 'load_custom_scripts');
  * Custom image thumbnail sizes
  */
 add_image_size('slider_background', 1440, 660);
+
+/*
+ * bbPress customisation
+ */
+function trim_forum_pagination_count($content) {
+   // Remove everything after the )
+   $result = explode(")", $content, 2);
+   return $result[0];
+}
+apply_filters('bbp_get_forum_pagination_count', 'trim_forum_pagination_count');
+
+/*
+ * End bbPress customisation
+ */
