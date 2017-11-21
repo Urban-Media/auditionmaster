@@ -36,12 +36,21 @@ if ( is_post_type_archive( 'product' ) ) {
                        <span></span>
                      </button>
                    </a>
+                   <?php
+                   /*
+                    * There may not always be a second button
+                    */
+                   if (get_sub_field('right_button_text') != '') {
+                   ?>
                    <a href="<?php the_sub_field('right_button_link'); ?>">
                      <button class="header_slider_button header_slider_button_transparent locationAware locationAwareHover">
                        <?php the_sub_field('right_button_text'); ?>
                        <span></span>
                      </button>
                    </a>
+                   <?php
+                   }
+                   ?>
                  </div>
                </div>
              </div>
@@ -51,7 +60,4 @@ if ( is_post_type_archive( 'product' ) ) {
       }
    }
    ?>
-   <div class="header_slide header_slider_background">
-     This is another slide <?php if (is_home()) { echo "This is the home page"; } else { echo "This is NOT the home page but it is page ID: ".$post->ID; } ?>
-   </div>
  </div>

@@ -84,17 +84,38 @@ $container = get_theme_mod( 'understrap_container_type' );
 									'walker'          => new bs4Navwalker(),
 								)
 							);*/ ?>
+
+							<?php
+							if (is_user_logged_in()) {
+							?>
+
 							<?php wp_nav_menu(
 								array(
-									'theme_location'  => 'header-menu',
+									'theme_location'  => 'logged-in-menu',
 									//'container_class' => 'collapse navbar-collapse',
 									'container_id'    => 'bs4navbar',
 									'menu_class'      => 'header_menu source_sans text-right',
 									'fallback_cb'     => '',
-									'menu_id'         => 'header-menu',
+									'menu_id'         => 'logged-in-menu',
 									//'walker'          => new WP_Bootstrap_Navwalker(),
 								)
 							); ?>
+
+							<?php } else { ?>
+
+								<?php wp_nav_menu(
+									array(
+										'theme_location'  => 'header-menu',
+										//'container_class' => 'collapse navbar-collapse',
+										'container_id'    => 'bs4navbar',
+										'menu_class'      => 'header_menu source_sans text-right',
+										'fallback_cb'     => '',
+										'menu_id'         => 'header-menu',
+										//'walker'          => new WP_Bootstrap_Navwalker(),
+									)
+								); ?>
+
+							<?php } ?>
 
 							<div class="spinner-master2" id="toggle-menu">
 							  <input type="checkbox" id="spinner-form2" />

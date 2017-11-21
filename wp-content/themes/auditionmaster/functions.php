@@ -123,6 +123,18 @@ class Mobile_Menu_Navwalker extends Walker_Nav_Menu {
 }
 
 /*
+ * Add an active class to the current page menu option
+ */
+ add_filter('nav_menu_css_class' , 'special_nav_class' , 10 , 2);
+
+ function special_nav_class ($classes, $item) {
+     if (in_array('current-menu-item', $classes) ){
+         $classes[] = 'current_page ';
+     }
+     return $classes;
+ }
+
+/*
  * Load page dependent scripts
  */
 function load_custom_scripts() {
@@ -133,10 +145,9 @@ function load_custom_scripts() {
     wp_register_script('scrollMagic', '//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.min.js', array('jquery'), false);
     wp_register_script( 'gsap-animation', '//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/animation.gsap.js', array('jquery', 'scrollMagic', 'tweenMax'), false);
     wp_register_script( 'tweenMax', '//cdnjs.cloudflare.com/ajax/libs/gsap/1.20.2/TweenMax.min.js', array('jquery'), false);
+
     // The script below is for dev purposes only and not needed on live
     wp_register_script('addIndicators', '//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/debug.addIndicators.min.js', array('jquery', 'scrollMagic'), false);
-    //wp_register_script('snapJs', get_template_directory_uri() . '/js/snap.min.js', array(), false);
-    //wp_register_script('snapJs-config', get_template_directory_uri() . '/js/snap-config.js', array('snapJs'), false);
 
     wp_enqueue_script('bxSlider', '//cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js', array('jquery'), false);
     wp_enqueue_script('bxSlider-config', get_template_directory_uri() . '/js/bxSlider-config.js', array('jquery', 'bxSlider'), false);
@@ -145,19 +156,16 @@ function load_custom_scripts() {
     wp_enqueue_script('scrollMagic', '//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.min.js', array('jquery'), false);
     wp_enqueue_script( 'gsap-animation', '//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/animation.gsap.js', array('jquery', 'scrollMagic', 'tweenMax'), false);
     wp_enqueue_script( 'tweenMax', '//cdnjs.cloudflare.com/ajax/libs/gsap/1.20.2/TweenMax.min.js', array('jquery'), false);
+
     // The script below is for dev purposes only and not needed on live
     wp_enqueue_script('addIndicators', '//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/debug.addIndicators.min.js', array('jquery', 'scrollMagic'), false);
-    //wp_enqueue_script('snapJs', get_template_directory_uri() . '/js/snap.min.js', array('jquery'), false);
-    //wp_enqueue_script('snapJs-config', get_template_directory_uri() . '/js/snap-config.js', array('snapJs'), false);
 
     $wnm_custom = array( 'template_directory_uri' => get_template_directory_uri() );
     wp_localize_script( 'bxSlider-config', 'local_vars', $wnm_custom );
 
     wp_register_style('bxSlider-css', '//cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css');
-    //wp_register_style('snapJs-css', get_template_directory_uri() . '/css/snap.css');
 
     wp_enqueue_style('bxSlider-css', '//cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css');
-    //wp_enqueue_style('snapJs-css', get_template_directory_uri() . '/css/snap.css');
 
 }
 
@@ -167,6 +175,7 @@ add_action('wp_enqueue_scripts', 'load_custom_scripts');
  * Custom image thumbnail sizes
  */
 add_image_size('slider_background', 1440, 660);
+add_image_size('shop_album_cover', 250, 250);
 
 /*
  * bbPress customisation
@@ -181,3 +190,11 @@ apply_filters('bbp_get_forum_pagination_count', 'trim_forum_pagination_count');
 /*
  * End bbPress customisation
  */
+
+// Change number or products per row to 3
+add_filter('loop_shop_columns', 'loop_columns');
+if (!function_exists('loop_columns')) {
+ function loop_columns() {
+   return 3; // 3 products per row
+ }
+}

@@ -5,7 +5,7 @@ jQuery(document).ready(function($) {
     pager: false,
     nextText: '<img id="arrow_right" src="' + templateUrl + '/img/arrow_right.png">',
     prevText: '<img id="arrow_left" src="' + templateUrl + '/img/arrow_left.png">',
-    adaptiveHeight: true,
+    touchEnabled: false
     //nextSelector: '#arrow_right',
     //prevSelector: '#arrow_left'
   });
