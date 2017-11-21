@@ -9380,6 +9380,9 @@ a {
   background-repeat: no-repeat; }
 
 .header_slide {
+  min-height: 400px; }
+
+.homepage_slide {
   min-height: 660px; }
 
 .bx-wrapper {

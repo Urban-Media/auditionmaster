@@ -17,6 +17,8 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 
 ?>
 
+<?php get_template_part( 'global-templates/header' ); ?>
+
 <div class="wrapper" id="woocommerce-wrapper">
 
 	<div class="<?php echo esc_attr( $container ); ?>" id="content" tabindex="-1">
@@ -28,10 +30,10 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 
 			<main class="site-main" id="main">
 
-			<?php 
-				$template_name = '\archive-product.php'; 
-				$args = array(); 
-				$template_path = ''; 
+			<?php
+				$template_name = '\archive-product.php';
+				$args = array();
+				$template_path = '';
 				$default_path = untrailingslashit( plugin_dir_path(__FILE__) ) . '\woocommerce';
 
 					if ( is_singular( 'product' ) ) {

@@ -87,7 +87,8 @@ register_nav_menus( array(
     'membership-menu'   => 'Membership Menu',
     'useful-links-menu' => 'Useful Links Menu',
     'social-links-menu' => 'Social Links Menu',
-    'legal-links-menu'  => 'Legal Links Menu'
+    'legal-links-menu'  => 'Legal Links Menu',
+    'logged-in-menu'    => 'Logged In Menu'
 ) );
 
 class Social_Links_Navwalker extends Walker_Nav_Menu {

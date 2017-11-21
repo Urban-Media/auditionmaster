@@ -21,7 +21,7 @@ jQuery(document).ready(function($) {
 	var controller = new ScrollMagic.Controller();
 
 	// build scenes
-	new ScrollMagic.Scene({triggerElement: "#whiteMenuTrigger"})
+	new ScrollMagic.Scene({triggerElement: "#whiteMenuTrigger", offset: 375})
 					.setClassToggle("#globalMenu", "white_menu") // add class toggle
 					.addIndicators() // add indicators (requires plugin)
 					.addTo(controller);
