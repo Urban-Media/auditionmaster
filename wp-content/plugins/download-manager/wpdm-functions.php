@@ -193,7 +193,7 @@ function DownloadLink(&$package, $embed = 0, $extras = array())
         if ($lock === 'locked') {
             $popstyle = isset($popstyle) && in_array($popstyle, array('popup', 'pop-over')) ? $popstyle : 'pop-over';
             if ($embed == 1)
-                $adata = "</strong><table class='table all-locks-table' style='border:0px'><tr><td style='padding:5px 0px;border:0px;'>" . $data . "</td></tr></table>";
+                $adata = "<div class='package-locks'>" . $data . "</div>";
             else {
                 $dataattrs = $popstyle == 'pop-over'? 'data-title="<button type=button id=\'close\' class=\'btn btn-link btn-xs pull-right po-close\' style=\'margin-top:-4px;margin-right:-10px\'><i class=\'fa fa-times text-danger\'></i></button> '.__('Download','download-manager').' ' . $package['title'] . '"' : 'data-toggle="modal" data-target="#pkg_' . $package['ID'] . "_" . $unqid . '"';
                 $adata = '<a href="#pkg_' . $package['ID'] . "_" . $unqid . '" '.$dataattrs.' class="wpdm-download-link wpdm-download-locked ' . $popstyle . ' ' . $btnclass . '"><i class=\'' . $wpdm_download_lock_icon . '\'></i>' . $package['link_label'] . '</a>';
@@ -281,11 +281,11 @@ function wpdm_getlink()
 
 
     if ($plock == 1 && $password != $file['password'] && !strpos("__" . $file['password'], "[$password]")) {
-        $data['error'] = __('Wrong Password!','download-manager');
+        $data['error'] = '<span class="color-red"><i class="fa fa-refresh"></i> '.__('Wrong Password! Try Again.','download-manager')."</span>";
         $file = array();
     }
     if ($plock == 1 && $password == '') {
-        $data['error'] = __('Wrong Password!','download-manager');
+        $data['error'] = '<span class="color-red"><i class="fa fa-refresh"></i> '.__('Wrong Password! Try Again.','download-manager')."</span>";
         $file = array();
     }
     $ux = "";

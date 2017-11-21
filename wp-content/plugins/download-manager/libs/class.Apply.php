@@ -20,7 +20,7 @@ class Apply {
         if(is_admin()) return;
         add_action("init", array($this, 'triggerDownload'));
         add_filter('widget_text', 'do_shortcode');
-        add_action('query_vars', array( $this, 'DashboardPageVars' ));
+        add_action('query_vars', array( $this, 'dashboardPageVars' ));
         add_action('init', array( $this, 'addWriteRules' ), 1, 0 );
         add_action('init', array($this, 'Login'));
         add_action('init', array($this, 'Register'));
@@ -101,7 +101,7 @@ class Apply {
 
     }
 
-    function DashboardPageVars( $vars ){
+    function dashboardPageVars( $vars ){
         array_push($vars, 'udb_page', 'adb_page');
         return $vars;
     }

@@ -37,4 +37,7 @@ global $post;
       }
    }
    ?>
+   <div class="header_slide header_slider_background">
+     This is another slide <?php if (is_home()) { echo "This is the home page"; } else { echo "This is NOT the home page"; } ?>
+   </div>
  </div>

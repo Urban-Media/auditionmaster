@@ -172,7 +172,7 @@ add_image_size('slider_background', 1440, 660);
  */
 function trim_forum_pagination_count($content) {
    // Remove everything after the )
-   $result = explode(")", $content, 2);
+   $result = explode("-", $content, 2);
    return $result[0];
 }
 apply_filters('bbp_get_forum_pagination_count', 'trim_forum_pagination_count');

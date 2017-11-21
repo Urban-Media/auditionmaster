@@ -9,15 +9,15 @@
 
 ?>
 
-<?php get_template_part( 'global-templates/content', 'header' ); ?>
+<?php //get_template_part( 'global-templates/content', 'header' ); ?>
 
-<div id="bbpress-forums"><h1>TEST3</h1>
+<div id="bbpress-forums">
 
-	<?php bbp_breadcrumb(); ?>
+	<?php //bbp_breadcrumb(); ?>
 
-	<?php bbp_forum_subscription_link(); ?>
+	<?php //bbp_forum_subscription_link(); ?>
 
-	<?php do_action( 'bbp_template_before_single_forum' ); ?>
+	<?php //do_action( 'bbp_template_before_single_forum' ); ?>
 
 	<?php if ( post_password_required() ) : ?>
 

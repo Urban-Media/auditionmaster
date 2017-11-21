@@ -22,11 +22,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 global $post;
 
-get_header( 'shop' ); ?>
+get_header( 'shop' ); ?><?php var_dump($post); ?>
 
-<?php //$string = get_template_directory() . '/global-templates/content-header.php'; echo $string; ?>
-<?php include( get_template_directory() . '/global-templates/content-header.php' ); ?>
-<?php wc_get_template('content-header', array(), 'global-templates'); ?>
+<?php //get_template_part('global-templates/content', 'header'); ?>
 
 	<?php
 		/**

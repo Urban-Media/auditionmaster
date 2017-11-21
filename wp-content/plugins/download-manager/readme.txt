@@ -3,7 +3,7 @@ Contributors: w3eden, codename065, shahriar0822, shimo16ab, shafayat-alam
 Donate link: 
 Tags: digital store, eshop, ecommerce, e-commerce, file management,  document management plugin, download manager, file manager, download monitor, download counter, password protection, download protection
 Requires at least: 3.4
-Tested up to: 4.8
+Tested up to: 4.9
 License: GPLv2 or later
  
   
@@ -152,6 +152,10 @@ Check download stats and get a push notification when someone downloads, install
 13. Video Player
 
 == Changelog ==
+
+= 2.9.59 =
+* Compatibility update for WordPress 4.9
+* Improved page templates
 
 = 2.9.58 =
 * Added support for chunk upload

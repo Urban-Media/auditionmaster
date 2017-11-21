@@ -1,10 +1,10 @@
-=== RegistrationMagic-Custom Registration Forms ===
+﻿=== RegistrationMagic-Custom Registration Forms ===
 Contributors: cmshelplive, registrationmagic, registrationmagicsupport
 Donate link: http://registrationmagic.com/
 Tags: User Registration, Registration, WooCommerce Registration Form, Online Registration, Frontend Registration
 Requires at least: 3.5
 Tested up to: 4.8
-Stable tag: 3.7.9.8
+Stable tag: 3.8.0.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -320,6 +320,12 @@ Note, this functionality is limited to Premium version of RegistrationMagic.
 19. Global Settings.
 
 == Changelog ==
+
+= 3.8.0.0 =
+* Minor UI Enhancements
+
+= 3.7.9.9 =
+* UI Changes
 
 = 3.7.9.8 =
 * Fixed a bug which led the admin sidebar to appear even after logout.
@@ -1055,6 +1061,12 @@ Fixed: Blocks showing up on front-end with some WP themes.
 * Added Custom Fields
 
 == Upgrade Notice ==
+
+= 3.8.0.0 =
+* Minor UI Enhancements
+
+= 3.7.9.9 =
+* UI Changes
 
 = 3.7.9.8 =
 * Fixed a bug which led the admin sidebar to appear even after logout.

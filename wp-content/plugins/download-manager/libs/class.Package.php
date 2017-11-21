@@ -158,7 +158,7 @@ class Package {
             $post_vars['link_label'] = __('Download Limit Exceeded','download-manager');
             $post_vars['download_link_popup'] =
             $post_vars['download_link_extended'] =
-            $post_vars['download_link'] = "<div class='alert alert-warning'><b>" . __('Download:','download-manager') . "</b><br/>{$post_vars['link_label']}</div>";
+            $post_vars['download_link'] = "<div class='alert alert-warning'><i class='fa fa-download'></i> {$post_vars['link_label']}</div>";
         }
 
         else if (isset($post_vars['expire_date']) && $post_vars['expire_date'] != "" && strtotime($post_vars['expire_date']) < time()) {
@@ -166,7 +166,7 @@ class Package {
             $post_vars['link_label'] = __('Download was expired on','download-manager') . " " . date_i18n(get_option('date_format')." h:i A", strtotime($post_vars['expire_date']));
             $post_vars['download_link'] =
             $post_vars['download_link_extended'] =
-            $post_vars['download_link_popup'] = "<div class='alert alert-warning'><b>" . __('Download:','download-manager') . "</b><br/>{$post_vars['link_label']}</div>";
+            $post_vars['download_link_popup'] = "<div class='alert alert-warning'><i class='fa fa-download'></i> {$post_vars['link_label']}</div>";
         }
 
         else if (isset($post_vars['publish_date']) && $post_vars['publish_date'] !='' && strtotime($post_vars['publish_date']) > time()) {
@@ -174,7 +174,7 @@ class Package {
             $post_vars['link_label'] = __('Download will be available from ','download-manager') . " " . date_i18n(get_option('date_format')." h:i A", strtotime($post_vars['publish_date']));
             $post_vars['download_link'] =
             $post_vars['download_link_extended'] =
-            $post_vars['download_link_popup'] = "<div class='alert alert-warning'><b>" . __('Download:','download-manager') . "</b><br/>{$post_vars['link_label']}</div>";
+            $post_vars['download_link_popup'] = "<div class='alert alert-warning'><i class='fa fa-download'></i> {$post_vars['link_label']}</div>";
         }
 
         else if(is_user_logged_in() && !self::userCanAccess($post_vars['ID'])){
@@ -182,7 +182,7 @@ class Package {
             $post_vars['link_label'] = stripslashes(get_option('wpdm_permission_msg'));
             $post_vars['download_link'] =
             $post_vars['download_link_extended'] =
-            $post_vars['download_link_popup'] = "<div class='alert alert-danger'><b>" . __('Download:','download-manager') . "</b><br/>{$post_vars['link_label']}</div>";
+            $post_vars['download_link_popup'] = "<div class='alert alert-danger-alt'><i class='fa fa-download'></i> {$post_vars['link_label']}</div>";
         }
 
         else if(!is_user_logged_in() && count(self::AllowedRoles($post_vars['ID'])) > 0 && !self::userCanAccess($post_vars['ID'])){
@@ -668,7 +668,7 @@ class Package {
             if ($lock === 'locked') {
                 $popstyle = isset($popstyle) && in_array($popstyle, array('popup', 'pop-over')) ? $popstyle : 'pop-over';
                 if ($embed == 1)
-                    $adata = "</strong><table class='table all-locks-table' style='border:0px'><tr><td style='padding:5px 0px;border:0px;'>" . $data . "</td></tr></table>";
+                    $adata = "<div class='package-locks'>" . $data . "</div>";
                 else {
                     $dataattrs = $popstyle == 'pop-over'? 'data-title="<button type=button id=\'close\' class=\'btn btn-link btn-xs pull-right po-close\' style=\'margin-top:-4px;margin-right:-10px\'><i class=\'fa fa-times text-danger\'></i></button> '.__('Download','download-manager').' ' . $package['title'] . '"' : 'data-toggle="modal" data-target="#pkg_' . $package['ID'] . "_" . $unqid . '"';
                     $adata = '<a href="#pkg_' . $package['ID'] . "_" . $unqid . '" '.$dataattrs.' class="wpdm-download-link wpdm-download-locked ' . $popstyle . ' ' . $btnclass . '"><i class=\'' . $wpdm_download_lock_icon . '\'></i>' . $package['link_label'] . '</a>';
@@ -721,7 +721,7 @@ class Package {
         if ($lock === 'locked') {
             $popstyle = isset($popstyle) && in_array($popstyle, array('popup', 'pop-over')) ? $popstyle : 'pop-over';
             if ($embed == 1)
-                $adata = "</strong><table class='table all-locks-table' style='border:0px'><tr><td style='padding:5px 0px;border:0px;'>" . $data . "</td></tr></table>";
+                $adata = "<div class='package-locks'>" . $data . "</div>";
             else {
                 $dataattrs = $popstyle == 'pop-over'? 'data-title="'.__('Download','download-manager').' ' . $package['title'] . '"' : 'data-toggle="modal" data-target="#pkg_' . $package['ID'] . "_" . $unqid . '"';
                 $adata = '<a href="#pkg_' . $package['ID'] . "_" . $unqid . '" '.$dataattrs.' class="wpdm-download-link wpdm-download-locked ' . $popstyle . ' ' . $package['btnclass'] . '">' . $package['link_label'] . '</a>';
@@ -868,7 +868,7 @@ class Package {
             if ($lock === 'locked') {
                 $popstyle = isset($popstyle) && in_array($popstyle, array('popup', 'pop-over')) ? $popstyle : 'pop-over';
                 if ($embed == 1)
-                    $adata = "</strong><table class='table all-locks-table' style='border:0px'><tr><td style='padding:5px 0px;border:0px;'>" . $data . "</td></tr></table>";
+                    $adata = "<div class='package-locks'>" . $data . "</div>";
                 else {
                     $dataattrs = $popstyle == 'pop-over'? 'data-title="<button type=button id=\'close\' class=\'btn btn-link btn-xs pull-right po-close\' style=\'margin-top:-4px;margin-right:-10px\'><i class=\'fa fa-times text-danger\'></i></button> '.__('Download','download-manager').' ' . $package['title'] . '"' : 'data-toggle="modal" data-target="#pkg_' . $package['ID'] . "_" . $unqid . '"';
                     $adata = '<a href="#pkg_' . $package['ID'] . "_" . $unqid . '" '.$dataattrs.' class="wpdm-download-link wpdm-download-locked ' . $popstyle . ' ' . $btnclass . '"><i class=\'' . $wpdm_download_lock_icon . '\'></i>' . $package['link_label'] . '</a>';

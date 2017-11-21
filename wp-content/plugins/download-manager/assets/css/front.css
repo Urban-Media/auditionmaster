@@ -1513,6 +1513,14 @@
 .w3eden .alert.alert-danger *:not(.btn) {
     color: #e74c3c !important;
 }
+.w3eden .alert-danger-alt{
+    background: rgba(231, 76, 60, 0.05);
+    border: 1px solid #e74c3c;
+    color: #e74c3c;
+    font-size: 10pt;
+    padding: 7px 15px;
+    margin: 0;
+}
 .w3eden .alert.alert-warning:before {
     background: #e67e22 none repeat scroll 0 0;
     border-bottom-left-radius: 3px;
@@ -2446,4 +2454,7 @@
 .w3eden .alert.alert-progress{
     background: #08BDF9;
     color: #ffffff;
+}
+.w3eden .package-locks .panel + .panel{
+    margin-top: 5px;
 }

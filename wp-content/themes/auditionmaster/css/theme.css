@@ -9395,6 +9395,9 @@ a {
 .bx-wrapper .bx-controls-direction a {
   z-index: 5 !important; }
 
+.bx-viewport {
+  height: auto !important; }
+
 #arrow_left {
   margin-left: 9vw; }
 
@@ -9769,6 +9772,21 @@ li.bbp-forum-freshness, li.bbp-topic-freshness {
   background-color: #f8ecf0 !important; }
   .bbp-topics ul.sticky .bbp-topic-title {
     font-weight: bold; }
+
+.bbp-footer {
+  background-color: #dddddd !important; }
+
+#bbpress-forums li.bbp-footer {
+  background-color: #dddddd !important; }
+
+li.bbp-body ul.topic {
+  border-bottom: 1px solid #dddddd; }
+
+.bbp-author-avatar {
+  padding-left: 38px; }
+
+p.bbp-topic-meta img.avatar {
+  margin-bottom: 0 !important; }
 
 /*
  * End bbPress forum modifications

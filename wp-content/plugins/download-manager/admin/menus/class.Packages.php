@@ -76,7 +76,7 @@ class Packages
         if(file_exists(UPLOAD_DIR.$name) && get_option('__wpdm_overwrrite_file',0)==1){
             @unlink(UPLOAD_DIR.$name);
         }
-        if(file_exists(UPLOAD_DIR.$_FILES['package_file']['name']) && !isset($_REQUEST["chunks"]))
+        if(file_exists(UPLOAD_DIR.$name) && !isset($_REQUEST["chunks"]))
             $filename = time().'wpdm_'.$name;
         else
             $filename = $name;
