@@ -9378,11 +9378,11 @@ a {
   -webkit-box-shadow: 0px 7px 5px 0px #bdb3bd;
   -moz-box-shadow: 0px 7px 5px 0px #bdb3bd;
   box-shadow: 0px 7px 5px 0px #bdb3bd;
-  color: black !important; }
+  color: black; }
   .white_menu a {
-    color: black !important; }
+    color: black; }
   .white_menu li {
-    color: black !important; }
+    color: black; }
 
 .black_header_text {
   color: black !important; }
@@ -9565,6 +9565,9 @@ a {
 
 .block_2_video {
   margin-bottom: 50px; }
+
+.widget_shopping_cart {
+  margin-top: 54px; }
 
 video {
   width: 70%    !important;
@@ -9775,6 +9778,53 @@ ul.products {
   margin-left: auto;
   margin-right: auto; }
 
+.woocommerce ul.cart_list li img, .woocommerce ul.product_list_widget li img, .woocommerce-page ul.cart_list li img, .woocommerce-page ul.product_list_widget li img {
+  float: none;
+  margin-right: 10px;
+  width: 43px; }
+
+.woocommerce .widget_shopping_cart .cart_list li, .woocommerce.widget_shopping_cart .cart_list li {
+  padding-left: 0; }
+
+.mini_cart_link {
+  color: black;
+  font-weight: normal !important;
+  line-height: 1; }
+  .mini_cart_link a {
+    color: black !important; }
+  .mini_cart_link:hover {
+    text-decoration: none;
+    color: black; }
+
+.mini_cart_item {
+  border-bottom: 1px solid #dddddd;
+  padding-top: 7px !important;
+  margin-top: 7px !important; }
+  .mini_cart_item:last-child {
+    border-bottom: 0; }
+
+.remove_from_cart_button, .woocommerce a.remove {
+  padding-top: 10px; }
+
+.woocommerce a.remove:hover {
+  padding-top: 2px; }
+
+.cart_list li a.remove {
+  top: unset !important; }
+
+.no_horizontal_padding {
+  padding-left: 0 !important;
+  padding-right: 0 !important; }
+
+.woocommerce .widget_shopping_cart .total, .woocommerce.widget_shopping_cart .total {
+  border-top: 1px solid #dddddd;
+  border-bottom: 1px solid #dddddd;
+  padding-top: 7px;
+  padding-bottom: 7px; }
+
+.woocommerce-Price-amount {
+  color: #bb486c; }
+
 /*
  * End Woocommerce stuff
  */
@@ -9952,6 +10002,8 @@ span {
 .locationAwareHover {
   color: white;
   /*tint($btn-color, 100);*/ }
+  .locationAwareHover a {
+    color: white; }
   .locationAwareHover span {
     position: absolute;
     display: block;

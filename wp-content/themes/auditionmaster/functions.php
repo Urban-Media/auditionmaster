@@ -191,6 +191,10 @@ apply_filters('bbp_get_forum_pagination_count', 'trim_forum_pagination_count');
  * End bbPress customisation
  */
 
+/*
+ * Woocommerce customisations
+ */
+
 // Change number or products per row to 3
 add_filter('loop_shop_columns', 'loop_columns');
 if (!function_exists('loop_columns')) {
@@ -198,3 +202,19 @@ if (!function_exists('loop_columns')) {
    return 3; // 3 products per row
  }
 }
+
+// Remove the 'view basket' option from the mini-cart.php section
+remove_action( 'woocommerce_widget_shopping_cart_buttons', 'woocommerce_widget_shopping_cart_button_view_cart', 10 );
+
+// Change the wording of the 'Checkout' button
+remove_action( 'woocommerce_widget_shopping_cart_buttons', 'woocommerce_widget_shopping_cart_proceed_to_checkout', 20 );
+
+function my_woocommerce_widget_shopping_cart_proceed_to_checkout() {
+    echo '<button class="block_slider_button header_slider_button_colour block_slider_button_hover locationAware locationAwareHoverPurple"><a href="' . esc_url( wc_get_checkout_url() ) . '">' . esc_html__( 'Go To Checkout', 'woocommerce' ) . '<span></span></a></button>';
+}
+
+add_action( 'woocommerce_widget_shopping_cart_buttons', 'my_woocommerce_widget_shopping_cart_proceed_to_checkout', 20 );
+
+/*
+ * End Woocommerce customisations
+ */
