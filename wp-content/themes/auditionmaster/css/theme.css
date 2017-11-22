@@ -9796,6 +9796,14 @@ ul.products {
     text-decoration: none;
     color: black; }
 
+.checkout_link {
+  color: white; }
+  .checkout_link a {
+    color: white; }
+  .checkout_link:hover {
+    color: white;
+    text-decoration: none; }
+
 .mini_cart_item {
   border-bottom: 1px solid #dddddd;
   padding-top: 7px !important;

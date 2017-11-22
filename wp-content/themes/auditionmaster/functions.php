@@ -210,7 +210,7 @@ remove_action( 'woocommerce_widget_shopping_cart_buttons', 'woocommerce_widget_s
 remove_action( 'woocommerce_widget_shopping_cart_buttons', 'woocommerce_widget_shopping_cart_proceed_to_checkout', 20 );
 
 function my_woocommerce_widget_shopping_cart_proceed_to_checkout() {
-    echo '<button class="block_slider_button header_slider_button_colour block_slider_button_hover locationAware locationAwareHoverPurple"><a href="' . esc_url( wc_get_checkout_url() ) . '">' . esc_html__( 'Go To Checkout', 'woocommerce' ) . '<span></span></a></button>';
+    echo '<button class="block_slider_button header_slider_button_colour block_slider_button_hover locationAware locationAwareHoverPurple" style="width:100%;"><a href="' . esc_url( wc_get_checkout_url() ) . '" class="checkout_link">' . esc_html__( 'Go To Checkout', 'woocommerce' ) . '<span></span></a></button>';
 }
 
 add_action( 'woocommerce_widget_shopping_cart_buttons', 'my_woocommerce_widget_shopping_cart_proceed_to_checkout', 20 );

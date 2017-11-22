@@ -839,6 +839,17 @@ ul.products {
   }
 }
 
+.checkout_link {
+  color: white;
+  a {
+    color: white;
+  }
+  &:hover {
+    color: white;
+    text-decoration: none;
+  }
+}
+
 .mini_cart_item {
   border-bottom: 1px solid $light-grey;
   padding-top: 7px !important;
