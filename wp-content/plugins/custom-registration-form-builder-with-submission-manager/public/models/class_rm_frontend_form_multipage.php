@@ -309,7 +309,7 @@ function gotonext_{$form_identifier}_{$this->form_number}(){
 			jQuery(this).show();
 		else
 			jQuery(this).hide();
-	})  
+	});  
     jQuery("#rm_prev_form_page_button_{$form_id}_{$this->form_number}").prop('disabled',false);
         rmInitGoogleApi();
 }
@@ -342,7 +342,7 @@ function gotoprev_{$form_identifier}_{$this->form_number}(){
 			jQuery(this).show();
 		else
 			jQuery(this).hide();
-	})
+	});
         
         if(rm_multipage.global_page_no_{$form_identifier}_{$this->form_number} <= 1)
         {

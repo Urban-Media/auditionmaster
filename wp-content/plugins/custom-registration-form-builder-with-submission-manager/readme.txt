@@ -3,8 +3,8 @@ Contributors: cmshelplive, registrationmagic, registrationmagicsupport
 Donate link: http://registrationmagic.com/
 Tags: User Registration, Registration, WooCommerce Registration Form, Online Registration, Frontend Registration
 Requires at least: 3.5
-Tested up to: 4.8
-Stable tag: 3.8.0.0
+Tested up to: 4.9
+Stable tag: 3.8.0.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -14,8 +14,10 @@ Create customized user registration forms, accept payments, track submissions, m
 
 Create customized user registration forms, accept payments, track submissions, manage users, analyze stats, assign user roles & much more!
 
->For any issues, bugs, feature requests and general help, contact our awesome support team! [Create New Support Ticket](http://registrationmagic.com/help-support/) 
->[Follow us on Facebook](https://www.facebook.com/registrationmagic) for feature updates.
+>No. 1 User Registration Plugin for WordPress
+>Take total control of user registrations on your site with powerful building, configuring, publishing, managing, analyzing and automation toolkit.
+
+>For any issues, bugs, feature requests and general help, contact our awesome support team! [Create New Support Ticket](http://registrationmagic.com/help-support/)
 
 = So, what exactly is RegistrationMagic? =
 
@@ -320,6 +322,16 @@ Note, this functionality is limited to Premium version of RegistrationMagic.
 19. Global Settings.
 
 == Changelog ==
+
+= 3.8.0.2 =
+* Third party theme compatiblity fixes
+* UI bug fixes
+* Submit button issue fix
+
+= 3.8.0.1 =
+* Third party compatiblity fixes
+* UI bug fixes
+* Added Starter Guide link to the All Forms page
 
 = 3.8.0.0 =
 * Minor UI Enhancements
@@ -1061,6 +1073,16 @@ Fixed: Blocks showing up on front-end with some WP themes.
 * Added Custom Fields
 
 == Upgrade Notice ==
+
+= 3.8.0.2 =
+* Third party theme compatiblity fixes
+* UI bug fixes
+* Submit button issue fix
+
+= 3.8.0.1 =
+* Third party compatiblity fixes
+* UI bug fixes
+* Added Starter Guide link to the All Forms page
 
 = 3.8.0.0 =
 * Minor UI Enhancements

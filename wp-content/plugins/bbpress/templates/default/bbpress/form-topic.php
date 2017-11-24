@@ -40,7 +40,7 @@
 						if ( bbp_is_topic_edit() )
 							printf( __( 'Now Editing &ldquo;%s&rdquo;', 'bbpress' ), bbp_get_topic_title() );
 						else
-							bbp_is_single_forum() ? printf( __( 'Create New Topic in &ldquo;%s&rdquo;', 'bbpress' ), bbp_get_forum_title() ) : _e( 'Create New Topic', 'bbpress' );
+							bbp_is_single_forum() ? printf( __( 'Create New Topic', 'bbpress' ), bbp_get_forum_title() ) : _e( 'Create New Topic', 'bbpress' );
 					?>
 
 				</legend>
@@ -200,7 +200,7 @@
 
 						<?php do_action( 'bbp_theme_before_topic_form_submit_button' ); ?>
 
-						<button type="submit" tabindex="<?php bbp_tab_index(); ?>" id="bbp_topic_submit" name="bbp_topic_submit" class="button submit"><?php _e( 'Submit', 'bbpress' ); ?></button>
+						<button type="submit" tabindex="<?php bbp_tab_index(); ?>" id="bbp_topic_submit" name="bbp_topic_submit" class="block_slider_button header_slider_button_colour block_slider_button_hover locationAware locationAwareHoverPurple"><?php _e( 'Submit', 'bbpress' ); ?><span></span></button>
 
 						<?php do_action( 'bbp_theme_after_topic_form_submit_button' ); ?>
 

@@ -78,6 +78,8 @@ require get_template_directory() . '/inc/editor.php';
  *
  */
 
+ add_theme_support( 'post-thumbnails' ); 
+
 /*
 * Header menu nav walker
 */
@@ -145,6 +147,7 @@ function load_custom_scripts() {
     wp_register_script('scrollMagic', '//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.min.js', array('jquery'), false);
     wp_register_script( 'gsap-animation', '//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/animation.gsap.js', array('jquery', 'scrollMagic', 'tweenMax'), false);
     wp_register_script( 'tweenMax', '//cdnjs.cloudflare.com/ajax/libs/gsap/1.20.2/TweenMax.min.js', array('jquery'), false);
+    wp_register_script('matchHeight', get_template_directory_uri() . '/js/jquery.matchHeight-min.js', array('jquery'), false);
 
     // The script below is for dev purposes only and not needed on live
     wp_register_script('addIndicators', '//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/debug.addIndicators.min.js', array('jquery', 'scrollMagic'), false);
@@ -166,6 +169,15 @@ function load_custom_scripts() {
     wp_register_style('bxSlider-css', '//cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css');
 
     wp_enqueue_style('bxSlider-css', '//cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css');
+
+    /*
+     * Some page specific scripts that don't require loading on every page
+     */
+
+    // Woocommerce - Used to make sure every item in the shop has the same height
+    if (is_shop()) {
+      wp_enqueue_script('matchHeight', get_template_directory_uri() . '/js/jquery.matchHeight-min.js', array('jquery'), false);
+    }
 
 }
 

@@ -85,9 +85,9 @@ do_action( 'woocommerce_before_mini_cart' ); ?>
 								<div class="col-7">
 									<div class="row">
 										<div class="col-12">
-											<a href="<?php echo esc_url( $product_permalink ); ?>" class="mini_cart_link">
+											<!--<a href="<?php echo esc_url( $product_permalink ); ?>" class="mini_cart_link">-->
 												<?php echo $product_name; ?>
-											</a>
+											<!--</a>-->
 										</div>
 									</div>
 									<div class="row">

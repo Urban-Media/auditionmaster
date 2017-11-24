@@ -82,6 +82,7 @@ global $regmagic_errors;
                     <li id="rm-ob-export" data-rmlocalstrall="<?php echo $localized_str_exportall; ?>" data-rmlocalstrselected="<?php echo $localized_str_exportselected; ?>" onclick="jQuery.rm_do_action('rm_form_manager_operartionbar','rm_form_export')"><a href="javascript:void(0)"><?php echo $localized_str_exportall; ?></a></li>
                     <li id="rm-ob-import"><a href="admin.php?page=rm_form_import"><?php echo RM_UI_Strings::get('LABEL_IMPORT'); ?></a></li>
                     <li><a href="javascript:void(0)" onclick="rm_start_joyride()"><?php echo RM_UI_Strings::get('LABEL_TOUR'); ?></a></li>
+                     <li id="rm-ob-demo"><a target="_blank" href="https://registrationmagic.com/registrationmagic-starter-guide/"><?php echo RM_UI_Strings::get('LABEL_STARTER_GUIDE'); ?><span class="dashicons dashicons-book-alt"></span></a></li>
                     <!-- <li id="rm-ob-demo"><a target="_blank" href="http://demo.registrationmagic.com/"><?php //echo RM_UI_Strings::get('LABEL_DEMO'); ?></a></li> -->
                     <li class="rm-form-toggle" id="rm-ob-sort">Sort Forms<select onchange="rm_sort_forms(this,'<?php echo $data->curr_page;?>')">
                             <option value=null><?php echo RM_UI_Strings::get('LABEL_SELECT'); ?></option>

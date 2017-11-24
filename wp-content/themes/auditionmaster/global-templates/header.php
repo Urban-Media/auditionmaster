@@ -15,6 +15,11 @@ if ( is_post_type_archive( 'product' ) ) {
   $post = get_post(119);
   setup_postdata($post);
 }
+
+if ( bbp_is_single_topic() || bbp_is_topic_archive() ) {
+  $post = get_post(160);
+  setup_postdata($post);
+}
 ?>
 <div id="header_slider" class="slider">
    <?php

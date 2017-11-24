@@ -107,6 +107,10 @@
     margin-bottom: 0px;
 }
 
+.rmagic .operationsbar .nav ul li#rm-ob-demo span.dashicons {
+    font-size: 16px;
+}
+
 .rmagic .rmfilters {
     width: 100%;
     float: right;

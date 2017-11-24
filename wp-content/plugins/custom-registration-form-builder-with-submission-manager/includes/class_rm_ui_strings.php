@@ -798,7 +798,7 @@ class RM_UI_Strings {
                 return __('Admin notifications, multiple email notifications, From email', 'custom-registration-form-builder-with-submission-manager');
 
             case 'GLOBAL_SETTINGS_EXTERNAL_INTEGRATIONS':
-                return __('External Integerations', 'custom-registration-form-builder-with-submission-manager');
+                return __('External Integrations', 'custom-registration-form-builder-with-submission-manager');
 
             case 'GLOBAL_SETTINGS_EXTERNAL_INTEGRATIONS_EXCERPT':
                 return __('Facebook, MailChimp (more coming soon!)', 'custom-registration-form-builder-with-submission-manager');
@@ -3343,6 +3343,9 @@ class RM_UI_Strings {
 
             case 'MSG_USER_ROLE_NOT_ASSIGNED':
                 return __("No role assigned", 'custom-registration-form-builder-with-submission-manager');
+                
+            case 'LABEL_STARTER_GUIDE':
+                return __("Starter Guide", 'custom-registration-form-builder-with-submission-manager');
 
             case 'LABEL_DEMO':
                 return __("Demo", 'custom-registration-form-builder-with-submission-manager');

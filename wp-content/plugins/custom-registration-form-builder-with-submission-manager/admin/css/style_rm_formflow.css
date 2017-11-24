@@ -369,4 +369,18 @@
     float: none;
 }
 
+/* --- Thick Box Preview popup --- */
+.admin_page_rm_field_manage  #TB_window {    
+    width: 98% !important;
+    left: 1% !important;
+    margin-left: 0px !important;
+    top: 1% !important;
+    margin-top: 0px !important;
+    
+}
+
+.admin_page_rm_field_manage  #TB_window iframe {    
+    width: 100% !important;
+}
+
 

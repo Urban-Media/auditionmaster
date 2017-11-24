@@ -126,6 +126,9 @@
   height:50px;
   width:50px;
   display: none;
+  @include breakpoint(md) {
+    display: block;
+  }
   @include breakpoint(sm) {
     display: block;
   }
@@ -310,6 +313,7 @@ a {
   background-color:rgba(52,58,64,0.75);
   height: 80px;
   display: list-item;
+  transition: background-color 0.5s ease;
 }
 
 .header_menu {
@@ -324,6 +328,9 @@ a {
   }
   & li:last-child {
     padding-right: 5px;
+  }
+  @include breakpoint(md) {
+    display: none;
   }
   @include breakpoint(sm) {
     display: none;
@@ -348,9 +355,9 @@ a {
 
 .white_menu {
   background-color: white !important;
-  -webkit-box-shadow: 0px 7px 5px 0px rgba(189,179,189,1);
-  -moz-box-shadow: 0px 7px 5px 0px rgba(189,179,189,1);
-  box-shadow: 0px 7px 5px 0px rgba(189,179,189,1);
+  -webkit-box-shadow: 0 5px 10px 0 rgba(0,0,0,0.12);
+  -moz-box-shadow: 0 5px 10px 0 rgba(0,0,0,0.12);
+  box-shadow: 0 5px 10px 0 rgba(0,0,0,0.12);
   color: black;
   a {
     color: black;
@@ -365,7 +372,10 @@ a {
 }
 
 .logo {
-  max-width:none;
+  max-width: none !important;
+  @include breakpoint(xxxs) {
+    max-width: 200px !important;
+  }
 }
 
 .header_slider_background {
@@ -575,10 +585,6 @@ a {
   margin-bottom: 50px;
 }
 
-.widget_shopping_cart {
-  margin-top: 54px;
-}
-
 video {
   width: 70%    !important;
   height: auto   !important;
@@ -766,10 +772,24 @@ video {
   border: 1px solid #dddddd;
   padding: 11px !important;
   margin-right: 25px;
+  margin-bottom: 15px !important;
+
   img {
     height: unset !important;
-    max-width: none;
+    /*max-width: none;*/
     width: unset !important;
+  }
+
+  @include breakpoint(xs) {
+    margin-right: 0;
+  }
+  @include breakpoint(xxs) {
+    margin-right: 0;
+    text-align: center;
+  }
+  @include breakpoint(xxxs) {
+    margin-right: 0;
+    text-align: center;
   }
 }
 
@@ -778,11 +798,22 @@ video {
   font-size: 16px;
   margin-top: 15px !important;
   max-width: 200px;
+
   a {
     color: black;
     &:hover {
       color: black;
     }
+  }
+
+  @include breakpoint(xs) {
+    max-width: none;
+  }
+  @include breakpoint(xxs) {
+    max-width: none;
+  }
+  @include breakpoint(xxxs) {
+    max-width: none;
   }
 }
 
@@ -806,8 +837,17 @@ video {
   color: $pink;
 }
 
-ul.products {
+.products {
   border-right: 1px solid $light-grey;
+  @include breakpoint(xs) {
+    border-right: 0;
+  }
+  @include breakpoint(xxs) {
+    border-right: 0;
+  }
+  @include breakpoint(xxxs) {
+    border-right: 0;
+  }
 }
 
 .centre_button {
@@ -892,6 +932,7 @@ ul.products {
   text-align: right;
   padding-right: 20px;
   margin-bottom: 40px;
+  margin-top: 15px;
 }
 
 .woocommerce nav.woocommerce-pagination ul, .woocommerce nav.woocommerce-pagination ul li {
@@ -932,6 +973,23 @@ ul.products {
 
 .woocommerce nav.woocommerce-pagination ul li a:focus, .woocommerce nav.woocommerce-pagination ul li a:hover, .woocommerce nav.woocommerce-pagination ul li span.current {
   background: none;
+}
+
+.widget_shopping_cart {
+  margin-top: 94px;
+}
+
+.woocommerce-ordering {
+  margin-top: 40px !important;
+}
+
+.custom-select {
+  background: none;
+}
+
+.woocommerce .woocommerce-ordering, .woocommerce-page .woocommerce-ordering {
+  float: none;
+  text-align: right;
 }
 
 /*
@@ -997,6 +1055,29 @@ li.bbp-body ul.topic {
 
 p.bbp-topic-meta img.avatar {
   margin-bottom: 0 !important;
+}
+
+div.bbp-submit-wrapper {
+  float: none;
+}
+
+.bbp-attachments-form input[type=file] {
+
+}
+
+.upload_media {
+  font-size: 16px;
+}
+
+.file_attach_button {
+  background-color: $grey-list;
+  color: white;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-size: 16px;
+  border-radius: 3px;
 }
 
 /*

@@ -58,7 +58,9 @@ $container = get_theme_mod( 'understrap_container_type' );
 					<div class="col-2">
 
 						<div class="navbar-brand">
-							<img class="logo" src="<?php echo get_template_directory_uri(); ?>/img/logo.png">
+							<a href="<?php echo home_url(); ?>">
+								<img class="logo" src="<?php echo get_template_directory_uri(); ?>/img/logo.png">
+							</a>
 						</div>
 
 					</div>

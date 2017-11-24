@@ -20,14 +20,15 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
 
-global $product;
+global $product, $woocommerce_loop;
 
 // Ensure visibility
 if ( empty( $product ) || ! $product->is_visible() ) {
 	return;
 }
 ?>
-<li <?php post_class('am_product_cat_listing'); ?>>
+<div class="col-lg-4 col-md-6 col-sm-6 col-12">
+<div <?php post_class('am_product_cat_listing'); ?> data-mh="woocommerce-products">
 	<?php
 
 	/**
@@ -37,7 +38,10 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 	 * @hooked woocommerce_template_loop_product_thumbnail - 10
 	 */
 	//do_action( 'woocommerce_before_shop_loop_item_title' );
-  echo woocommerce_get_product_thumbnail('shop_album_cover');
+	//$image_url = wp_get_attachment_image_src( get_post_thumbnail_id(), 'shop_album_cover')[0]; var_dump($image_url);
+  //echo woocommerce_get_product_thumbnail('shop_album_cover'); // img-responsive
+	$image = get_the_post_thumbnail( get_the_ID(), 'shop_album_cover', array( 'class' => 'img-responsive') ); //var_dump($image);
+	echo $image;
 
 	/**
 	 * woocommerce_shop_loop_item_title hook.
@@ -74,4 +78,7 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 	 */
 	do_action( 'woocommerce_after_shop_loop_item' );
 	?>
-</li>
+</div>
+</div>
+
+<?php //if($woocommerce_loop['loop'] % 3 === 0) {  echo '</div><div class="row">';} ?>

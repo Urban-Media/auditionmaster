@@ -1354,3 +1354,7 @@ pre.rm-pre-wrapper-for-script-tags { display:none !important; }
 .widget_rm_form_widget .rmagic.rm_layout_label_left .rmrow .rmfield {width: 100%;}
 .widget_rm_form_widget .rmagic.rm_layout_label_left .rmrow .rminput {width: 100%;}
 .rm_noscript_btn{display: none !important}
+
+/* ---- Help text in widget--- */
+
+.widget_rm_form_widget .rmagic .rmagic-form .rmrow .rmnote { margin-left: 0px;}

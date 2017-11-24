@@ -9184,6 +9184,9 @@ a.skip-link {
   height: 50px;
   width: 50px;
   display: none; }
+  @media (min-width: 992px) and (max-width: 1199px) {
+    .spinner-master2 {
+      display: block; } }
   @media (min-width: 768px) and (max-width: 991px) {
     .spinner-master2 {
       display: block; } }
@@ -9343,7 +9346,8 @@ a {
   /*opacity: 0.5;*/
   background-color: rgba(52, 58, 64, 0.75);
   height: 80px;
-  display: list-item; }
+  display: list-item;
+  transition: background-color 0.5s ease; }
 
 .header_menu {
   color: white; }
@@ -9355,6 +9359,9 @@ a {
     color: white; }
   .header_menu li:last-child {
     padding-right: 5px; }
+  @media (min-width: 992px) and (max-width: 1199px) {
+    .header_menu {
+      display: none; } }
   @media (min-width: 768px) and (max-width: 991px) {
     .header_menu {
       display: none; } }
@@ -9375,9 +9382,9 @@ a {
 
 .white_menu {
   background-color: white !important;
-  -webkit-box-shadow: 0px 7px 5px 0px #bdb3bd;
-  -moz-box-shadow: 0px 7px 5px 0px #bdb3bd;
-  box-shadow: 0px 7px 5px 0px #bdb3bd;
+  -webkit-box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.12);
+  -moz-box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.12);
+  box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.12);
   color: black; }
   .white_menu a {
     color: black; }
@@ -9388,7 +9395,10 @@ a {
   color: black !important; }
 
 .logo {
-  max-width: none; }
+  max-width: none !important; }
+  @media (max-width: 480px) {
+    .logo {
+      max-width: 200px !important; } }
 
 .header_slider_background {
   background-size: cover;
@@ -9566,9 +9576,6 @@ a {
 .block_2_video {
   margin-bottom: 50px; }
 
-.widget_shopping_cart {
-  margin-top: 54px; }
-
 video {
   width: 70%    !important;
   height: auto   !important; }
@@ -9738,11 +9745,23 @@ video {
 .am_product_cat_listing {
   border: 1px solid #dddddd;
   padding: 11px !important;
-  margin-right: 25px; }
+  margin-right: 25px;
+  margin-bottom: 15px !important; }
   .am_product_cat_listing img {
     height: unset !important;
-    max-width: none;
+    /*max-width: none;*/
     width: unset !important; }
+  @media (max-width: 767px) and (min-width: 641px) {
+    .am_product_cat_listing {
+      margin-right: 0; } }
+  @media (max-width: 640px) and (min-width: 481px) {
+    .am_product_cat_listing {
+      margin-right: 0;
+      text-align: center; } }
+  @media (max-width: 480px) {
+    .am_product_cat_listing {
+      margin-right: 0;
+      text-align: center; } }
 
 .am_shop_product_title {
   color: black;
@@ -9753,6 +9772,15 @@ video {
     color: black; }
     .am_shop_product_title a:hover {
       color: black; }
+  @media (max-width: 767px) and (min-width: 641px) {
+    .am_shop_product_title {
+      max-width: none; } }
+  @media (max-width: 640px) and (min-width: 481px) {
+    .am_shop_product_title {
+      max-width: none; } }
+  @media (max-width: 480px) {
+    .am_shop_product_title {
+      max-width: none; } }
 
 .price {
   color: #bb486c !important;
@@ -9770,8 +9798,17 @@ video {
   font-size: 16px;
   color: #bb486c; }
 
-ul.products {
+.products {
   border-right: 1px solid #dddddd; }
+  @media (max-width: 767px) and (min-width: 641px) {
+    .products {
+      border-right: 0; } }
+  @media (max-width: 640px) and (min-width: 481px) {
+    .products {
+      border-right: 0; } }
+  @media (max-width: 480px) {
+    .products {
+      border-right: 0; } }
 
 .centre_button {
   display: block;
@@ -9837,7 +9874,8 @@ ul.products {
 .woocommerce nav.woocommerce-pagination {
   text-align: right;
   padding-right: 20px;
-  margin-bottom: 40px; }
+  margin-bottom: 40px;
+  margin-top: 15px; }
 
 .woocommerce nav.woocommerce-pagination ul, .woocommerce nav.woocommerce-pagination ul li {
   border: 0; }
@@ -9869,6 +9907,19 @@ ul.products {
 
 .woocommerce nav.woocommerce-pagination ul li a:focus, .woocommerce nav.woocommerce-pagination ul li a:hover, .woocommerce nav.woocommerce-pagination ul li span.current {
   background: none; }
+
+.widget_shopping_cart {
+  margin-top: 94px; }
+
+.woocommerce-ordering {
+  margin-top: 40px !important; }
+
+.custom-select {
+  background: none; }
+
+.woocommerce .woocommerce-ordering, .woocommerce-page .woocommerce-ordering {
+  float: none;
+  text-align: right; }
 
 /*
  * End Woocommerce stuff
@@ -9918,6 +9969,22 @@ li.bbp-body ul.topic {
 
 p.bbp-topic-meta img.avatar {
   margin-bottom: 0 !important; }
+
+div.bbp-submit-wrapper {
+  float: none; }
+
+.upload_media {
+  font-size: 16px; }
+
+.file_attach_button {
+  background-color: #808285;
+  color: white;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-size: 16px;
+  border-radius: 3px; }
 
 /*
  * End bbPress forum modifications
