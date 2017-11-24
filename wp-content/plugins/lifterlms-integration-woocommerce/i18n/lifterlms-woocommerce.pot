@@ -1,0 +1,197 @@
+# Copyright (C) 2017 lifterlms-integration-woocommerce
+# This file is distributed under the same license as the lifterlms-integration-woocommerce package.
+msgid ""
+msgstr ""
+"Project-Id-Version: lifterlms-integration-woocommerce\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language-Team: LifterLMS <help@lifterlms.com>\n"
+"Last-Translator: Thomas Patrick Levy <thomas@lifterlms.com>\n"
+"Report-Msgid-Bugs-To: https://lifterlms.com/my-account/my-tickets\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-KeywordsList: __;_e;_ex:1,2c;_n:1,2;_n_noop:1,2;_nx:1,2,4c;_nx_noop:1,2,3c;_x:1,2c;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: includes/class.llms.integration.woocommerce.php:23
+msgid "WooCommerce"
+msgstr ""
+
+#: includes/class.llms.integration.woocommerce.php:104
+msgid "Customer was enrolled into the \"%1$s\" %2$s."
+msgstr ""
+
+#: includes/class.llms.integration.woocommerce.php:108
+msgid "Customer was unenrolled from the \"%1$s\" %2$s."
+msgstr ""
+
+#: includes/class.llms.integration.woocommerce.php:166
+msgid "Available to all customers"
+msgstr ""
+
+#: includes/class.llms.integration.woocommerce.php:176
+msgid "Select a LifterLMS membership which a customer must belong to before they can purchase this product. %sLearn More%s."
+msgstr ""
+
+#: includes/class.llms.integration.woocommerce.php:178, includes/class.llms.integration.woocommerce.php:527
+msgid "Members Only"
+msgstr ""
+
+#: includes/class.llms.integration.woocommerce.php:317
+msgid "Courses"
+msgstr ""
+
+#: includes/class.llms.integration.woocommerce.php:318
+msgid "Memberships"
+msgstr ""
+
+#: includes/class.llms.integration.woocommerce.php:319
+msgid "Achievements"
+msgstr ""
+
+#: includes/class.llms.integration.woocommerce.php:320
+msgid "Certificates"
+msgstr ""
+
+#: includes/class.llms.integration.woocommerce.php:321
+msgid "Notifications"
+msgstr ""
+
+#: includes/class.llms.integration.woocommerce.php:322
+msgid "Vouchers"
+msgstr ""
+
+#: includes/class.llms.integration.woocommerce.php:480
+msgid "My Notifications"
+msgstr ""
+
+#: includes/class.llms.integration.woocommerce.php:491
+msgid "Redeem a Voucher"
+msgstr ""
+
+#: includes/class.llms.integration.woocommerce.php:584
+msgid "Course / Membership"
+msgstr ""
+
+#: includes/class.llms.integration.woocommerce.php:585
+msgid "Enrollment Status"
+msgstr ""
+
+#: includes/class.llms.metabox.wc.product.php:22
+msgid "Product Options"
+msgstr ""
+
+#: includes/class.llms.metabox.wc.product.php:43
+msgid "General"
+msgstr ""
+
+#: includes/class.llms.metabox.wc.product.php:49
+msgid "Select product(s)"
+msgstr ""
+
+#: includes/class.llms.metabox.wc.product.php:53
+msgid "When an order for any of the selected WooCommerce products have completed, the customer will be automatically enrolled in this %s"
+msgstr ""
+
+#: includes/class.llms.metabox.wc.product.php:56
+msgid "WooCommerce Product(s)"
+msgstr ""
+
+#: includes/class.llms.metabox.wc.product.php:63
+msgid "Determine the order used to list the products in the pricing table"
+msgstr ""
+
+#: includes/class.llms.metabox.wc.product.php:66
+msgid "Sort Order"
+msgstr ""
+
+#: includes/class.llms.metabox.wc.product.php:68
+msgid "Menu Order (low to high)"
+msgstr ""
+
+#: includes/class.llms.metabox.wc.product.php:69
+msgid "Menu Order (high to low)"
+msgstr ""
+
+#: includes/class.llms.metabox.wc.product.php:70
+msgid "Title (A - Z)"
+msgstr ""
+
+#: includes/class.llms.metabox.wc.product.php:71
+msgid "Title (Z - A)"
+msgstr ""
+
+#: includes/class.llms.metabox.wc.product.php:72
+msgid "Product ID (low to high)"
+msgstr ""
+
+#: includes/class.llms.metabox.wc.product.php:73
+msgid "Product ID (high to low)"
+msgstr ""
+
+#: includes/class.llms.settings.woocommerce.php:39
+msgid "WooCommerce Settings"
+msgstr ""
+
+#: includes/class.llms.settings.woocommerce.php:46
+msgid "Use WooCommerce to sell LifterLMS Courses and Memberships"
+msgstr ""
+
+#: includes/class.llms.settings.woocommerce.php:50
+msgid "Enable / Disable"
+msgstr ""
+
+#: includes/class.llms.settings.woocommerce.php:61
+msgid "Customers will be enrolled when a WooCommerce Order reaches this status"
+msgstr ""
+
+#: includes/class.llms.settings.woocommerce.php:66
+msgid "Order Enrollment Status"
+msgstr ""
+
+#: includes/class.llms.settings.woocommerce.php:71
+msgid "Customers will be unenrolled when a WooCommerce Order reaches any of these statuses"
+msgstr ""
+
+#: includes/class.llms.settings.woocommerce.php:76
+msgid "Order Unenrollment Status(es)"
+msgstr ""
+
+#: includes/class.llms.settings.woocommerce.php:85
+msgid "Customers will be enrolled when a WooCommerce Subscription reaches this status"
+msgstr ""
+
+#: includes/class.llms.settings.woocommerce.php:90
+msgid "Subscription Enrollment Status"
+msgstr ""
+
+#: includes/class.llms.settings.woocommerce.php:95
+msgid "Customers will be unenrolled when a WooCommerce Subscription reaches any of these statuses"
+msgstr ""
+
+#: includes/class.llms.settings.woocommerce.php:100
+msgid "Subscription Unenrollment Status(es)"
+msgstr ""
+
+#: includes/class.llms.settings.woocommerce.php:110
+msgid "The following LifterLMS Student Dashboard areas will be added to the WooCommerce My Account Page"
+msgstr ""
+
+#: includes/class.llms.settings.woocommerce.php:115
+msgid "My Account Endpoints"
+msgstr ""
+
+#: includes/class.llms.settings.woocommerce.php:119
+msgid "Enable debug logging"
+msgstr ""
+
+#: includes/class.llms.settings.woocommerce.php:120
+msgid "When enabled, debugging information will be logged to \"%s\""
+msgstr ""
+
+#: includes/class.llms.settings.woocommerce.php:122
+msgid "Debug Log"
+msgstr ""
