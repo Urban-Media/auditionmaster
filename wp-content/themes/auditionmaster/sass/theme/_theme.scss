@@ -992,6 +992,24 @@ video {
   text-align: right;
 }
 
+.am_woocommerce_single_product_container {
+  margin-top: 55px;
+  border-right: 1px solid $light-grey;
+  @include breakpoint(xs) {
+    border-right: 0;
+  }
+  @include breakpoint(xxs) {
+    border-right: 0;
+  }
+  @include breakpoint(xxxs) {
+    border-right: 0;
+  }
+}
+
+.woocommerce-error, .woocommerce-info, .woocommerce-message {
+  margin-top: 20px;
+}
+
 /*
  * End Woocommerce stuff
  */

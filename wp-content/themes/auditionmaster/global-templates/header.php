@@ -1,6 +1,14 @@
 <!-- This may or may not be a slider depending on the page. All pages should however have at least one header -->
 <?php
 global $post;
+
+/*
+ * Make a save of the current page data to reload it if we get
+ * header data from a different page
+ */
+$samePost = true;
+$currentPostCopy = $post;
+
 /*
  * The header slide is slightly larger (660px vs 400px) on the homepage
  * only, which has a post ID of 9
@@ -11,15 +19,27 @@ $isOnHomepageClass = ($post->ID == 9) ? 'homepage_slide' : 'header_slide';
  * Archive pages like the Woocommerce shop don't work like regular pages
  * so we have to use an alternate method to get the right data for them
  */
-if ( is_post_type_archive( 'product' ) ) {
+if ( is_post_type_archive( 'product' ) || is_product() ) {
   $post = get_post(119);
   setup_postdata($post);
+  $samePost = false;
 }
 
-if ( bbp_is_single_topic() || bbp_is_topic_archive() ) {
+// bbPress forum
+if ( is_bbpress() ) {
   $post = get_post(160);
   setup_postdata($post);
+  $samePost = false;
 }
+
+// LifterLMS course
+if ( is_course() || is_lesson() ) {
+  $post = get_post(226);
+  setup_postdata($post);
+  $samePost = false;
+}
+
+//var_dump($currentPostCopy);
 ?>
 <div id="header_slider" class="slider">
    <?php
@@ -66,3 +86,12 @@ if ( bbp_is_single_topic() || bbp_is_topic_archive() ) {
    }
    ?>
  </div>
+
+<?php
+/*
+* Reset page data to its original value if needed
+*/
+if (!$samePost) {
+  setup_postdata($currentPostCopy);
+}
+?>

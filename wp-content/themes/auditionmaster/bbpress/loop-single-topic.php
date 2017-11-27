@@ -9,9 +9,6 @@
 
 ?>
 
-<?php get_template_part( 'global-templates/header' ); ?>
-<div id="whiteMenuTrigger"></div>
-
 <ul id="bbp-topic-<?php bbp_topic_id(); ?>" <?php bbp_topic_class(); ?>>
 
 	<li class="bbp-topic-title">

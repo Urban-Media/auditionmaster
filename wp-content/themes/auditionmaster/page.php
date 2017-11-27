@@ -46,11 +46,21 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 		</div><!-- #primary -->
 
 		<!-- Do the right sidebar check -->
-		<?php if ( 'right' === $sidebar_pos || 'both' === $sidebar_pos ) : ?>
+		<?php //if ( 'right' === $sidebar_pos || 'both' === $sidebar_pos ) : ?>
 
-			<?php get_sidebar( 'right' ); ?>
+			<?php
 
-		<?php endif; ?>
+			if (is_shop()) {
+				 get_sidebar( 'right' );
+			}
+
+			elseif ( is_post_type_archive( 'course' ) || is_post_type_archive( 'llms_membership' ) ) {
+				get_sidebar('llms_shop');
+			}
+
+			?>
+
+		<?php //endif; ?>
 
 	</div><!-- .row -->
 

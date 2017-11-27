@@ -78,7 +78,12 @@ require get_template_directory() . '/inc/editor.php';
  *
  */
 
- add_theme_support( 'post-thumbnails' ); 
+add_theme_support( 'post-thumbnails' );
+
+function my_llms_theme_support(){
+	add_theme_support( 'lifterlms-sidebars' );
+}
+add_action( 'after_setup_theme', 'my_llms_theme_support' );
 
 /*
 * Header menu nav walker

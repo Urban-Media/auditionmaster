@@ -9921,6 +9921,22 @@ video {
   float: none;
   text-align: right; }
 
+.am_woocommerce_single_product_container {
+  margin-top: 55px;
+  border-right: 1px solid #dddddd; }
+  @media (max-width: 767px) and (min-width: 641px) {
+    .am_woocommerce_single_product_container {
+      border-right: 0; } }
+  @media (max-width: 640px) and (min-width: 481px) {
+    .am_woocommerce_single_product_container {
+      border-right: 0; } }
+  @media (max-width: 480px) {
+    .am_woocommerce_single_product_container {
+      border-right: 0; } }
+
+.woocommerce-error, .woocommerce-info, .woocommerce-message {
+  margin-top: 20px; }
+
 /*
  * End Woocommerce stuff
  */
