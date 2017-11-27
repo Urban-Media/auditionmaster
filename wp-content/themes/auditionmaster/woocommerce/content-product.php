@@ -28,7 +28,7 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 }
 ?>
 <div class="col-lg-4 col-md-6 col-sm-6 col-12">
-<div <?php post_class('am_product_cat_listing'); ?> data-mh="woocommerce-products">
+<div <?php post_class('am_product_cat_listing box_hover'); ?> data-mh="woocommerce-products">
 	<?php
 
 	/**

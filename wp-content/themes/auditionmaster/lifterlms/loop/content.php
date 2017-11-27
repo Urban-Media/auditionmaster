@@ -10,7 +10,7 @@
 if ( ! defined( 'ABSPATH' ) ) { exit; }
 ?>
 <li <?php post_class( 'llms-loop-item' ); ?>>
-	<div class="llms-loop-item-content">
+	<div class="llms-loop-item-content box_hover">
 
 	<?php
 		/**
@@ -30,7 +30,7 @@ if ( ! defined( 'ABSPATH' ) ) { exit; }
 		do_action( 'lifterlms_before_loop_item_title' );
 	?>
 
-	<h4 class="llms-loop-title"><?php the_title(); ?></h4>
+	<h4 class="llms-loop-title nimbus_sans"><?php the_title(); ?></h4>
 
 	<footer class="llms-loop-item-footer">
 		<?php

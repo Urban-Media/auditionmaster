@@ -9508,6 +9508,26 @@ a {
   position: absolute;
   top: 40%; }
 
+/*
+ * We do this box hover effect (used on shop products/LMS courses etc) in a
+ * slightly less straightforward way because it is faster/more efficient
+ * http://tobiasahlin.com/blog/how-to-animate-box-shadow/
+ */
+.box_hover {
+  transition: background-color 0.5s ease; }
+  .box_hover:hover {
+    background-color: #eaeaea;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15); }
+
+.box_hover::after {
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out; }
+
+/* Transition to showing the bigger shadow on hover */
+.box_hover:hover::after {
+  opacity: 1; }
+
 .frontpage_title {
   /*font-family : "";*/
   font-size: 36px; }
@@ -9747,16 +9767,13 @@ video {
   border: 1px solid #dddddd;
   padding: 11px !important;
   margin-right: 25px;
-  margin-bottom: 15px !important;
-  transition: background-color 0.5s ease; }
+  margin-bottom: 15px !important; }
   .am_product_cat_listing img {
     height: unset !important;
     /*max-width: none;*/
     width: unset !important; }
   .am_product_cat_listing a:hover {
     text-decoration: none; }
-  .am_product_cat_listing:hover {
-    background-color: #eaeaea; }
   @media (max-width: 767px) and (min-width: 641px) {
     .am_product_cat_listing {
       margin-right: 0; } }
@@ -10020,8 +10037,7 @@ div.bbp-submit-wrapper {
 .llms-loop-item-content {
   border: 1px solid #dddddd;
   background: none;
-  padding: 10px;
-  transition: background-color 0.5s ease; }
+  padding: 10px; }
   .llms-loop-item-content:hover {
     /*background: none;*/
     text-decoration: none; }
@@ -10032,6 +10048,9 @@ div.bbp-submit-wrapper {
 
 .llms-loop-item-content .llms-loop-link:hover {
   text-decoration: none; }
+
+.llms-loop-title {
+  font-size: 16px; }
 
 /*
  * End LifterLMS modifications
