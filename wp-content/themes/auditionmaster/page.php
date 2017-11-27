@@ -16,6 +16,8 @@ $container   = get_theme_mod( 'understrap_container_type' );
 $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 
 ?>
+<?php get_template_part( 'global-templates/header' ); ?>
+<div id="whiteMenuTrigger"></div>
 
 <div class="wrapper" id="page-wrapper">
 

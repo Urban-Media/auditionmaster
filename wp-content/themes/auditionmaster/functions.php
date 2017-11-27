@@ -193,6 +193,7 @@ add_action('wp_enqueue_scripts', 'load_custom_scripts');
  */
 add_image_size('slider_background', 1440, 660);
 add_image_size('shop_album_cover', 250, 250);
+add_image_size('course_cover', 250, 250);
 
 /*
  * bbPress customisation

@@ -442,9 +442,11 @@ a {
   display: block;
   width: fit-content;
   margin-top: 50px;
+
   & a:hover {
     text-decoration: none;
   }
+
   @include breakpoint(sm) {
     text-align: center;
   }
@@ -469,6 +471,8 @@ a {
   padding-right: 40px;
   margin-left: 15px;
   margin-right: 15px;
+  cursor: pointer;
+
   @include breakpoint(sm) {
     margin-top: 15px;
     margin-bottom: 15px;
@@ -773,11 +777,22 @@ video {
   padding: 11px !important;
   margin-right: 25px;
   margin-bottom: 15px !important;
+  transition: background-color 0.5s ease;
 
   img {
     height: unset !important;
     /*max-width: none;*/
     width: unset !important;
+  }
+
+  a {
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  &:hover {
+    background-color: $background-hover-grey;
   }
 
   @include breakpoint(xs) {
@@ -1010,6 +1025,12 @@ video {
   margin-top: 20px;
 }
 
+.woocommerce-loop-product__link {
+  &:hover {
+    text-decoration: none;
+  }
+}
+
 /*
  * End Woocommerce stuff
  */
@@ -1100,6 +1121,39 @@ div.bbp-submit-wrapper {
 
 /*
  * End bbPress forum modifications
+ */
+
+/*
+ * LifterLMS modifications
+ */
+
+.llms-loop-item-content {
+  border: 1px solid $light-grey;
+  background: none;
+  padding: 10px;
+  transition: background-color 0.5s ease;
+
+  &:hover {
+    /*background: none;*/
+    text-decoration: none;
+  }
+}
+
+.llms-loop-title {
+  &:hover {
+    text-decoration: none;
+    color: inherit !important;
+  }
+}
+
+.llms-loop-item-content .llms-loop-link {
+  &:hover {
+      text-decoration: none;
+  }
+}
+
+/*
+ * End LifterLMS modifications
  */
 
 /*
@@ -1293,6 +1347,7 @@ div.bbp-submit-wrapper {
 
    &:hover {
      color: white !important; /*tint($btn-color, 75%);*/
+     border-color: $btn-color-dark;
 
      span {
        @include size(225%, $btn-width*2.25);

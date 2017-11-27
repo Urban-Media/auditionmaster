@@ -69,24 +69,6 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 					<div class="col-7">
 
-						<!-- The WordPress Menu goes here -->
-						<!--<nav class="navbar navbar-toggleable-md navbar-light bg-faded">
-					   <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#bs4navbar" aria-controls="bs4navbar" aria-expanded="false" aria-label="Toggle navigation">
-					     <span class="navbar-toggler-icon"></span>
-					   </button>-->
-							<?php /*wp_nav_menu(
-								array(
-									'theme_location'  => 'header-menu',
-									'container_class' => 'collapse navbar-collapse',
-									'container'				=> 'div',
-									'container_id'    => 'bs4navbar',
-									'menu_class'      => 'header_menu source_sans_pro text-right navbar-nav mr-auto',
-									'fallback_cb'     => 'bs4navwalker::fallback',
-									'menu_id'         => 'header-menu',
-									'walker'          => new bs4Navwalker(),
-								)
-							);*/ ?>
-
 							<?php
 							if (is_user_logged_in()) {
 							?>

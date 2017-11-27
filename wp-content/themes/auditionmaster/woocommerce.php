@@ -29,10 +29,10 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 			<div class="col-md-9">
 
 				<?php
-					$template_name = '\archive-product.php';
+					$template_name = '/archive-product.php';
 					$args = array();
 					$template_path = '';
-					$default_path = untrailingslashit( plugin_dir_path(__FILE__) ) . '\woocommerce';
+					$default_path = untrailingslashit( plugin_dir_path(__FILE__) ) . '/woocommerce';
 
 						if ( is_singular( 'product' ) ) {
 

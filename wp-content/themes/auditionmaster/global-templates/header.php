@@ -39,6 +39,12 @@ if ( is_course() || is_lesson() ) {
   $samePost = false;
 }
 
+if (is_courses() || is_quiz() || is_membership() || is_memberships() || is_llms_account_page() || is_llms_checkout()) {
+  $post = get_post(175);
+  setup_postdata($post);
+  $samePost = false;
+}
+
 //var_dump($currentPostCopy);
 ?>
 <div id="header_slider" class="slider">

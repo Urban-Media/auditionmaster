@@ -14,10 +14,10 @@
 if ( ! defined( 'ABSPATH' ) ) { exit; }
 ?>
 
+<?php get_header( 'llms_loop' ); ?>
+
 <?php get_template_part( 'global-templates/header' ); ?>
 <div id="whiteMenuTrigger"></div>
-
-<?php get_header( 'llms_loop' ); ?>
 
 <?php do_action( 'lifterlms_before_main_content' ); ?>
 
