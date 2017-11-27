@@ -10,7 +10,7 @@
 if ( ! defined( 'ABSPATH' ) ) { exit; }
 ?>
 <li <?php post_class( 'llms-loop-item' ); ?>>
-	<div class="llms-loop-item-content box_hover">
+	<div class="llms-loop-item-content text-center box_hover" data-mh="lifter_courses">
 
 	<?php
 		/**
@@ -33,19 +33,21 @@ if ( ! defined( 'ABSPATH' ) ) { exit; }
 	<h4 class="llms-loop-title nimbus_sans"><?php the_title(); ?></h4>
 
 	<footer class="llms-loop-item-footer">
-		<?php
-			/**
-			 * lifterlms_after_loop_item_title
-			 * @hooked lifterlms_template_loop_author - 10
-			 * @hooked lifterlms_template_loop_length - 15
-			 * @hooked lifterlms_template_loop_difficulty - 20
-			 *
-			 * On Student Dashboard & "Mine" Courses Shortcode
-			 * @hooked lifterlms_template_loop_enroll_status - 25
-			 * @hooked lifterlms_template_loop_enroll_date - 30
-			 */
-			do_action( 'lifterlms_after_loop_item_title' );
-		?>
+    <div class="row">
+  		<?php
+  			/**
+  			 * lifterlms_after_loop_item_title
+  			 * @hooked lifterlms_template_loop_author - 10
+  			 * @hooked lifterlms_template_loop_length - 15
+  			 * @hooked lifterlms_template_loop_difficulty - 20
+  			 *
+  			 * On Student Dashboard & "Mine" Courses Shortcode
+  			 * @hooked lifterlms_template_loop_enroll_status - 25
+  			 * @hooked lifterlms_template_loop_enroll_date - 30
+  			 */
+  			do_action( 'lifterlms_after_loop_item_title' );
+  		 ?>
+    </div>
 	</footer>
 
 	<?php

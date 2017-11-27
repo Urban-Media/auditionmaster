@@ -1177,6 +1177,13 @@ div.bbp-submit-wrapper {
   font-size: 16px;
 }
 
+.llms-progress-bar {
+  width: 250px !important;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: $exp-bar-empty !important;
+}
+
 /*
  * End LifterLMS modifications
  */

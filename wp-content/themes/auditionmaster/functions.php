@@ -251,7 +251,7 @@ function new_loop_shop_per_page( $cols ) {
  */
 
 // Remove estimated course length
-add_action( 'plugins_loaded', 'remove_lms_estimated_length' );
+add_action( 'after_setup_theme', 'remove_lms_estimated_length' );
 function remove_lms_estimated_length(){
 	remove_action( 'lifterlms_after_loop_item_title', 'lifterlms_template_loop_length', 15 );
 }
