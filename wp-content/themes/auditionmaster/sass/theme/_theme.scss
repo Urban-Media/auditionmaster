@@ -965,18 +965,22 @@ video {
   color: $pink;
 }
 
-.woocommerce nav.woocommerce-pagination {
+// Pagination classes are used by both Woocommerce and LifterLMS
+.woocommerce nav.woocommerce-pagination,
+nav.llms-pagination {
   text-align: right;
   padding-right: 20px;
   margin-bottom: 40px;
   margin-top: 15px;
 }
 
-.woocommerce nav.woocommerce-pagination ul, .woocommerce nav.woocommerce-pagination ul li {
+.woocommerce nav.woocommerce-pagination ul, .woocommerce nav.woocommerce-pagination ul li,
+nav.llms-pagination ul, nav.llms-pagination ul li {
   border: 0;
 }
 
-.woocommerce nav.woocommerce-pagination ul li .page-numbers {
+.woocommerce nav.woocommerce-pagination ul li .page-numbers,
+nav.llms-pagination ul li .page-numbers {
   border: 1px solid $light-grey;
   border-radius: 80%;
   width: 33px;
@@ -994,11 +998,13 @@ video {
 
 }
 
-.woocommerce nav.woocommerce-pagination ul li span.current {
+.woocommerce nav.woocommerce-pagination ul li span.current,
+nav.llms-pagination ul li span.current {
   border-color: $pink;
 }
 
-.woocommerce nav.woocommerce-pagination ul li .next, .woocommerce nav.woocommerce-pagination ul li .prev {
+.woocommerce nav.woocommerce-pagination ul li .next, .woocommerce nav.woocommerce-pagination ul li .prev,
+nav.llms-pagination ul li .next, nav.llms-pagination ul li .prev {
   border: 0;
   background-color: unset;
   font-size: 25px;
@@ -1008,8 +1014,38 @@ video {
   }
 }
 
-.woocommerce nav.woocommerce-pagination ul li a:focus, .woocommerce nav.woocommerce-pagination ul li a:hover, .woocommerce nav.woocommerce-pagination ul li span.current {
+.woocommerce nav.woocommerce-pagination ul li a:focus, .woocommerce nav.woocommerce-pagination ul li a:hover, .woocommerce nav.woocommerce-pagination ul li span.current,
+nav.llms-pagination ul li a:focus, nav.llms-pagination ul li a:hover, nav.llms-pagination ul li span.current {
   background: none;
+}
+
+nav.llms-pagination ul li a, nav.llms-pagination ul li span {
+    margin: 0;
+    text-decoration: none !important;
+    padding: 0;
+    line-height: 1;
+    font-size: 1em;
+    font-weight: 400;
+    padding: .5em;
+    min-width: 1em;
+    display: block;
+}
+
+nav.llms-pagination ul li span.current {
+  color: #8a7e88;
+}
+
+span.page-numbers, a.page-numbers {
+  cursor: pointer;
+  &:hover {
+    background-color: $background-hover-grey !important;
+  }
+}
+
+a.next, a.prev {
+  &:hover {
+    background-color: unset !important;
+  }
 }
 
 .widget_shopping_cart {
@@ -1182,6 +1218,14 @@ div.bbp-submit-wrapper {
   margin-left: auto;
   margin-right: auto;
   background-color: $exp-bar-empty !important;
+}
+
+.llms-author, .llms-difficulty {
+  display: inline-block !important;
+}
+
+.llms-author-info, .llms-difficulty {
+  vertical-align: baseline;
 }
 
 /*

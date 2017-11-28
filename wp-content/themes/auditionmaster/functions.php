@@ -256,6 +256,18 @@ function remove_lms_estimated_length(){
 	remove_action( 'lifterlms_after_loop_item_title', 'lifterlms_template_loop_length', 15 );
 }
 
+// Add a custom sidebar for the course catalogue
+function lifter_course_catalogue_sidebar() {
+
+	$args = array(
+		'id'            => 'lifter_course_catalogue',
+		'name'          => __( 'LifterLMS Course Catalogue', 'text_domain' ),
+	);
+	register_sidebar( $args );
+
+}
+add_action( 'widgets_init', 'lifter_course_catalogue_sidebar' );
+
 
 /*
  * End LifterLMS customisations

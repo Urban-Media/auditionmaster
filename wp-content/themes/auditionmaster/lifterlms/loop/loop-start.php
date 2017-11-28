@@ -7,6 +7,5 @@
  */
 if ( ! defined( 'ABSPATH' ) ) { exit; } // End if().
 ?>
-<div class="col-8">
-<div class="llms-loop">
-	<ul class="llms-loop-list<?php echo llms_get_loop_list_classes(); ?>">
+    <div class="llms-loop">
+    	<ul class="llms-loop-list<?php echo llms_get_loop_list_classes(); ?>">
