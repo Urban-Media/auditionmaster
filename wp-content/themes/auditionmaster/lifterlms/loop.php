@@ -24,7 +24,7 @@ if ( ! defined( 'ABSPATH' ) ) { exit; }
 <div class="row">
   <div class="col-8">
 
-<?php if ( apply_filters( 'lifterlms_show_page_title', true ) ) : ?>
+<?php if ( apply_filters( 'lifterlms_show_page_title', true ) && !is_courses() ) : ?>
 
 	<h1 class="page-title"><?php lifterlms_page_title(); ?></h1>
 

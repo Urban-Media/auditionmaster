@@ -150,9 +150,11 @@ function load_custom_scripts() {
     wp_register_script('locationAwareHover', get_template_directory_uri() . '/js/button_hover_effect.js', array('jquery'), false);
     wp_register_script('global', get_template_directory_uri() . '/js/global.js', array('jquery', 'scrollMagic', 'addIndicators'), false);
     wp_register_script('scrollMagic', '//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.min.js', array('jquery'), false);
-    wp_register_script( 'gsap-animation', '//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/animation.gsap.js', array('jquery', 'scrollMagic', 'tweenMax'), false);
-    wp_register_script( 'tweenMax', '//cdnjs.cloudflare.com/ajax/libs/gsap/1.20.2/TweenMax.min.js', array('jquery'), false);
+    wp_register_script('gsap-animation', '//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/animation.gsap.js', array('jquery', 'scrollMagic', 'tweenMax'), false);
+    wp_register_script('tweenMax', '//cdnjs.cloudflare.com/ajax/libs/gsap/1.20.2/TweenMax.min.js', array('jquery'), false);
     wp_register_script('matchHeight', get_template_directory_uri() . '/js/jquery.matchHeight-min.js', array('jquery'), false);
+    wp_register_script('easyTabs', get_template_directory_uri() . '/js/jquery.easytabs.min.js', array('jquery'), false);
+    wp_register_script('easyTabs-config', get_template_directory_uri() . '/js/easytabs-config.js', array('jquery', 'easyTabs'), false);
 
     // The script below is for dev purposes only and not needed on live
     wp_register_script('addIndicators', '//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/debug.addIndicators.min.js', array('jquery', 'scrollMagic'), false);
@@ -162,18 +164,20 @@ function load_custom_scripts() {
     wp_enqueue_script('locationAwareHover', get_template_directory_uri() . '/js/button_hover_effect.js', array('jquery'), false);
     wp_enqueue_script('global', get_template_directory_uri() . '/js/global.js', array('jquery', 'scrollMagic', 'addIndicators'), false);
     wp_enqueue_script('scrollMagic', '//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.min.js', array('jquery'), false);
-    wp_enqueue_script( 'gsap-animation', '//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/animation.gsap.js', array('jquery', 'scrollMagic', 'tweenMax'), false);
-    wp_enqueue_script( 'tweenMax', '//cdnjs.cloudflare.com/ajax/libs/gsap/1.20.2/TweenMax.min.js', array('jquery'), false);
+    wp_enqueue_script('gsap-animation', '//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/animation.gsap.js', array('jquery', 'scrollMagic', 'tweenMax'), false);
+    wp_enqueue_script('tweenMax', '//cdnjs.cloudflare.com/ajax/libs/gsap/1.20.2/TweenMax.min.js', array('jquery'), false);
+
 
     // The script below is for dev purposes only and not needed on live
     wp_enqueue_script('addIndicators', '//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/debug.addIndicators.min.js', array('jquery', 'scrollMagic'), false);
 
     $wnm_custom = array( 'template_directory_uri' => get_template_directory_uri() );
-    wp_localize_script( 'bxSlider-config', 'local_vars', $wnm_custom );
+    wp_localize_script('bxSlider-config', 'local_vars', $wnm_custom );
 
     wp_register_style('bxSlider-css', '//cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css');
 
     wp_enqueue_style('bxSlider-css', '//cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css');
+
 
     /*
      * Some page specific scripts that don't require loading on every page
@@ -182,6 +186,12 @@ function load_custom_scripts() {
     // Woocommerce - Used to make sure every item in the shop has the same height
     if (is_shop()) {
       wp_enqueue_script('matchHeight', get_template_directory_uri() . '/js/jquery.matchHeight-min.js', array('jquery'), false);
+    }
+
+    // LifterLMS - Used on course overview pages
+    if (is_course()) {
+      wp_enqueue_script('easyTabs', get_template_directory_uri() . '/js/jquery.easytabs.min.js', array('jquery'), false);
+      wp_enqueue_script('easyTabs-config', get_template_directory_uri() . '/js/easytabs-config.js', array('jquery', 'easyTabs'), false);
     }
 
 }
@@ -262,6 +272,10 @@ function lifter_course_catalogue_sidebar() {
 	$args = array(
 		'id'            => 'lifter_course_catalogue',
 		'name'          => __( 'LifterLMS Course Catalogue', 'text_domain' ),
+    'before_widget' => '<li id="%1$s" class="widget course_sidebar_widget %2$s">',
+	  'after_widget'  => '</li>',
+    'before_title'  => '<h3 class="widget-title">',
+	  'after_title'   => '</h3>',
 	);
 	register_sidebar( $args );
 

@@ -974,6 +974,14 @@ nav.llms-pagination {
   margin-top: 15px;
 }
 
+nav.llms-pagination ul {
+    display: inline-block;
+    white-space: nowrap;
+    padding: 0;
+    clear: both;
+    margin: 1px;
+}
+
 .woocommerce nav.woocommerce-pagination ul, .woocommerce nav.woocommerce-pagination ul li,
 nav.llms-pagination ul, nav.llms-pagination ul li {
   border: 0;
@@ -1228,8 +1236,52 @@ div.bbp-submit-wrapper {
   vertical-align: baseline;
 }
 
+.course_sidebar_widget {
+  list-style: none;
+}
+
 /*
  * End LifterLMS modifications
+ */
+
+/*
+ * EasyTabs plugin
+ */
+
+.etabs {
+   margin: 0;
+   padding: 0;
+   border-bottom: 1px solid $pink;
+}
+
+.tab {
+   display: inline-block;
+   color: $pink;
+}
+
+.tab a {
+   font-size: 16px;
+   line-height: 2em;
+   display: block;
+   padding: 0 10px;
+   outline: none;
+   color: $pink;
+}
+
+.tab a:hover {
+   text-decoration: none;
+   color: $pink;
+}
+
+.tab.active {
+   border-bottom: solid 5px $pink;
+   padding-top: 6px;
+   position: relative;
+   top: 1px;
+}
+
+/*
+ * End EasyTabs plugin
  */
 
 /*
