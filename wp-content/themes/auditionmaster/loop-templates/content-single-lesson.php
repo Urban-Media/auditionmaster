@@ -78,7 +78,6 @@
           echo "<ul class='lesson_resource_list'>";
           while (have_rows('resources')) { the_row();
             $resource = get_sub_field('resource');
-            //var_dump($resource);
 
             // Get icon by mime type
             $mimetype = explode('/', $resource['mime_type']);
@@ -108,10 +107,26 @@
             ?>
             <a href="<?php echo $resource['url']; ?>">
               <li class="lesson_resource box_hover">
-              <?php
-              echo "<img src='" . $fileIcon ."' class='lesson_resource_icon'>";
-              echo $fileName;
-              ?>
+                <div class="row">
+                  <div class="col-1">
+                    <?php
+                    echo "<img src='" . $fileIcon ."' class='lesson_resource_icon'>";
+                    ?>
+                  </div>
+                  <div class="col-11">
+                    <?php
+                    echo $fileName;
+
+                    if (strlen(get_sub_field('description')) > 0) {
+                      ?>
+                      <div class="lesson_resource_description">
+                        <?php the_sub_field('description') ?>
+                      </div>
+                      <?php
+                    }
+                    ?>
+                  </div>
+                </div>
               </li>
             </a>
             <?php
@@ -142,21 +157,24 @@
             ?>
             <a href="<?php echo prepend_hypertext($link['url']); ?>">
               <li class="lesson_resource box_hover lesson_links">
-              <?php
-              echo (strlen($link['display_name']) > 0) ? $link['display_name'] : $link['url'];
-              ?>
+                <div class="row">
+                  <div class="col-12">
+                    <?php
+                    echo (strlen($link['display_name']) > 0) ? $link['display_name'] : $link['url'];
+                    ?>
 
-              <?php
-              if (strlen($link['description']) > 0) {
-                ?>
-                <span class="lesson_resource_description">
-                  <?php echo $link['description']; ?>
-                </span>
-                <?php
-              }
-              ?>
-
-              </li>
+                    <?php
+                    if (strlen($link['description']) > 0) {
+                      ?>
+                      <span class="lesson_resource_description">
+                        <?php echo $link['description']; ?>
+                      </span>
+                      <?php
+                    }
+                    ?>
+                  </div>
+                </div>
+              </li>      
             </a>
             <?php
           }
