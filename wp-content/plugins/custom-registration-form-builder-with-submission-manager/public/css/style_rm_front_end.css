@@ -453,6 +453,8 @@ img.rm-user {
     color: rgb(175,175,175);
 }
 
+.rm-submission#rm_my_details_tab { display:flex;}
+
 .rmagic .rm-submission-note-attribute a {
     padding-right: 10px;
     font-size: 14px;
@@ -1296,6 +1298,8 @@ pre.rm-pre-wrapper-for-script-tags { display:none !important; }
 }
 
 /*--- Widget form css----*/
+
+.widget_rm_form_widget { width: 100%; display: inline-block;}
 
 .widget_rm_form_widget .rm_layout_two_columns .rm-two-columns-wrap .rmrow{    
     width: 100%;

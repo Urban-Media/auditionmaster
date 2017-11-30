@@ -1240,6 +1240,50 @@ div.bbp-submit-wrapper {
   list-style: none;
 }
 
+.llms-lesson-preview.is-complete .llms-lesson-complete, .llms-lesson-preview.is-free .llms-lesson-complete {
+  color: $pink !important;
+}
+
+.lms_lesson_author {
+  font-size: 16px;
+  color: $grey-list;
+}
+
+.llms-parent-course-link {
+  display: none;
+}
+
+.lesson_resource_list {
+  list-style-type: none;
+  padding-left: 0;
+
+  a {
+    color: black;
+    text-decoration: none;
+
+    &:hover {
+      color: black;
+      text-decoration: none;
+    }
+  }
+
+}
+
+.lesson_resource {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid $light-grey;
+}
+
+.lesson_resource_icon {
+  max-height: 25px;
+  max-width: 25px;
+  height: auto;
+  width: 100%;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
 /*
  * End LifterLMS modifications
  */

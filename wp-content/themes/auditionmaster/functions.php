@@ -188,8 +188,8 @@ function load_custom_scripts() {
       wp_enqueue_script('matchHeight', get_template_directory_uri() . '/js/jquery.matchHeight-min.js', array('jquery'), false);
     }
 
-    // LifterLMS - Used on course overview pages
-    if (is_course()) {
+    // LifterLMS - Used on course overview and lesson pages
+    if (is_course() || is_lesson()) {
       wp_enqueue_script('easyTabs', get_template_directory_uri() . '/js/jquery.easytabs.min.js', array('jquery'), false);
       wp_enqueue_script('easyTabs-config', get_template_directory_uri() . '/js/easytabs-config.js', array('jquery', 'easyTabs'), false);
     }

@@ -16,11 +16,11 @@
  * Plugin Name:       RegistrationMagic
  * Plugin URI:        http://www.registrationmagic.com
  * Description:       A powerful system for customizing registration forms, setting up paid registrations, tracking submissions, managing users, assigning user roles, analyzing stats, and much more!!
- * Version:           3.8.0.2
+ * Version:           3.8.0.3
  * Tags:              registration, form, custom, analytics, simple, submissions
  * Requires at least: 3.3.0
- * Author:            CMSHelplive
- * Author URI:        http://cmshelplive.com
+ * Author:            Registrationmagic
+ * Author URI:        https://registrationmagic.com/
  * Text Domain:       custom-registration-form-builder-with-submission-manager
  * Domain Path:       /languages
  */
@@ -83,7 +83,7 @@ if (is_plugin_active_for_network($rmgold) || is_plugin_active($rmgold) ||
 }
 */
 if(!defined('RM_PLUGIN_VERSION')) {
-define('RM_PLUGIN_VERSION', '3.8.0.2');
+define('RM_PLUGIN_VERSION', '3.8.0.3');
 define('RM_DB_VERSION', 4.9);
 define('RM_SHOW_WHATSNEW_SPLASH', false);  //Set it to 'false' to disable whatsnew screen.
 define('RM_PLUGIN_BASENAME', plugin_basename(__FILE__ ));
