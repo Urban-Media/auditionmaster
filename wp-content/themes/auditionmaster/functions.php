@@ -206,6 +206,32 @@ add_image_size('shop_album_cover', 250, 250);
 add_image_size('course_cover', 250, 250);
 
 /*
+ * Random helper functions
+ */
+
+/*
+ * Naive function to take a URL and prepend it with hypertext
+ * (http/https although we will use //) if it does not already exist
+ *
+ * Return string URL resource
+ */
+function prepend_hypertext($url) {
+	$existingPrefix = parse_url($url, PHP_URL_SCHEME);
+
+	if ($existingPrefix) {
+		return $url;
+	}
+
+	// PHP does not consider '//' a scheme but it is still valid
+	// so check for that next
+	if (substr($url, 2) == '//') {
+		return $url;
+	}
+
+	return '//' . $url;
+}
+
+/*
  * bbPress customisation
  */
 function trim_forum_pagination_count($content) {

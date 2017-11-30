@@ -126,6 +126,43 @@
       <div id="tabs1-usefullinks">
     		<!-- Useful links tab content -->
 
+        <?php
+        if (have_rows('useful_links')) {
+          echo "<ul class='lesson_resource_list'>";
+          while (have_rows('useful_links')) { the_row();
+            $link = array(
+                'location'      => get_sub_field('link_location'),
+                'link_internal' => get_sub_field('link_internal'),
+                'link_external' => get_sub_field('link_external'),
+                'display_name'  => get_sub_field('display_name'),
+                'description'   => get_sub_field('description')
+            );
+
+            $link['url'] = (!empty($link['link_internal']) && !!$link['link_internal']) ? $link['link_internal'] : $link['link_external'];
+            ?>
+            <a href="<?php echo prepend_hypertext($link['url']); ?>">
+              <li class="lesson_resource box_hover lesson_links">
+              <?php
+              echo (strlen($link['display_name']) > 0) ? $link['display_name'] : $link['url'];
+              ?>
+
+              <?php
+              if (strlen($link['description']) > 0) {
+                ?>
+                <span class="lesson_resource_description">
+                  <?php echo $link['description']; ?>
+                </span>
+                <?php
+              }
+              ?>
+
+              </li>
+            </a>
+            <?php
+          }
+          echo "</ul>";
+        }
+        ?>
 
     		<!-- End useful links tab content -->
       </div>
