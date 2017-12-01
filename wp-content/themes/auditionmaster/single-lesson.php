@@ -27,15 +27,6 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 
 					<?php get_template_part( 'loop-templates/content', 'single-lesson' ); ?>
 
-						<?php understrap_post_nav(); ?>
-
-					<?php
-					// If comments are open or we have at least one comment, load up the comment template.
-					if ( comments_open() || get_comments_number() ) :
-						comments_template();
-					endif;
-					?>
-
 				<?php endwhile; // end of the loop. ?>
 
 			</main><!-- #main -->

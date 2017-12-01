@@ -316,6 +316,10 @@ a {
   transition: background-color 0.5s ease;
 }
 
+.pink_text {
+  color: $pink !important;
+}
+
 .header_menu {
   color: white;
   li {

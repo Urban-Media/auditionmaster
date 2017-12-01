@@ -9349,6 +9349,9 @@ a {
   display: list-item;
   transition: background-color 0.5s ease; }
 
+.pink_text {
+  color: #bb486c !important; }
+
 .header_menu {
   color: white; }
   .header_menu li {

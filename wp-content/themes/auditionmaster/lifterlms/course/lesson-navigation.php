@@ -14,15 +14,37 @@ $prev_id = $lesson->get_previous_lesson();
 $next_id = $lesson->get_next_lesson();
 ?>
 
+<div class="container">
+	<div class="row">
+
+		<div class="col-6">
+			<button class="header_slider_button header_slider_button_transparent pink_text locationAware locationAwareHover">
+				Back to Module
+				<span></span>
+			</button>
+		</div>
+
+		<div class="col-6">
+			<button class="block_slider_button header_slider_button_colour block_slider_button_hover locationAware locationAwareHoverPurple">
+				Next Lesson
+				<span></span>
+			</button>
+		</div>
+
+	</div>
+</div>
+
 <nav class="llms-course-navigation">
 
 	<?php if ( $prev_id ) : ?>
 
 		<div class="llms-course-nav llms-prev-lesson">
-			<?php llms_get_template( 'course/lesson-preview.php', array(
+			<?php /*llms_get_template( 'course/lesson-preview.php', array(
 				'lesson' => new LLMS_Lesson( $prev_id ),
 				'pre_text' => __( 'Previous Lesson', 'lifterlms' ),
-			) ); ?>
+			) ); */?>
+
+
 		</div>
 
 	<?php endif; ?>
